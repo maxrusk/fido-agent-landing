@@ -5,7 +5,7 @@ import { Calendar, Laptop, LineChart, BadgeDollarSign } from "lucide-react";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50/30">
       {/* Hero Section */}
       <div className="relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
@@ -37,7 +37,7 @@ const Index = () => {
       </div>
 
       {/* Features Section */}
-      <div className="py-24 bg-gray-50">
+      <div className="py-24 bg-white/60 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -109,7 +109,7 @@ const Index = () => {
       </div>
 
       {/* CTA Section */}
-      <div className="py-24 bg-white">
+      <div className="py-24 bg-gradient-to-t from-blue-50/50 to-transparent">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Ready to Transform Your Business?

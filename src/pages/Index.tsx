@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Calendar, Laptop, LineChart, BadgeDollarSign } from "lucide-react";
@@ -102,27 +101,6 @@ const Index = () => {
               </p>
             </CardContent>
           </Card>
-        </div>
-      </div>
-
-      {/* Testimonial Section */}
-      <div className="bg-gradient-to-r from-blue-50 to-purple-50 py-20">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <div className="bg-white rounded-3xl shadow-xl p-12">
-            <div className="text-4xl mb-6">💬</div>
-            <blockquote className="text-xl md:text-2xl text-gray-700 italic font-medium mb-8 leading-relaxed">
-              "I never thought I'd get approved for an SBA loan — Fido made it happen in 3 weeks."
-            </blockquote>
-            <div className="flex items-center justify-center space-x-4">
-              <div className="w-12 h-12 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full flex items-center justify-center text-white font-bold">
-                T
-              </div>
-              <div className="text-left">
-                <p className="font-bold text-gray-900">Trina</p>
-                <p className="text-gray-600">Founder of Urban Dog Spa</p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 

@@ -266,7 +266,7 @@ const Index = () => {
                         </div>
                         <div>
                           <h3 className="text-lg font-semibold text-gray-800">Reddit</h3>
-                          <p className="text-gray-600">Fido Financial</p>
+                          <p className="text-gray-600">u/fidofinancial</p>
                         </div>
                       </div>
                     </div>

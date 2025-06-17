@@ -10,7 +10,7 @@ const Index = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
         <Tabs defaultValue="home" className="w-full">
           <TabsList className="grid w-full grid-cols-2 max-w-md mx-auto mb-8 bg-white/80 backdrop-blur-sm border border-blue-100">
-            <TabsTrigger value="home" className="data-[state=active]:bg-blue-100 data-[state=active]:text-blue-800 text-base font-bold">Home</TabsTrigger>
+            <TabsTrigger value="home" className="data-[state=active]:bg-blue-100 data-[state=active]:text-blue-800 text-base font-bold rounded-none">Home</TabsTrigger>
             <TabsTrigger value="vision" className="data-[state=active]:bg-blue-100 data-[state=active]:text-blue-800 font-bold">Fido's Purpose</TabsTrigger>
           </TabsList>
           

@@ -1,17 +1,20 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Calendar, Laptop, LineChart, BadgeDollarSign, ExternalLink } from "lucide-react";
+import { Calendar, Laptop, LineChart, BadgeDollarSign, ExternalLink, Mail, Phone, MapPin } from "lucide-react";
+
 const Index = () => {
   const handleTryFido = () => {
     window.open('https://chatgpt.com/g/g-6849ed2b9ea48191a53c4f016cf0b29c-sba-loan-guidance-agent', '_blank');
   };
+
   return <div className="min-h-screen bg-gradient-to-br from-blue-50 via-sky-50 to-cyan-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
         <Tabs defaultValue="home" className="w-full">
-          <TabsList className="grid w-full grid-cols-2 max-w-md mx-auto mb-8 bg-transparent border-none p-0 gap-4">
+          <TabsList className="grid w-full grid-cols-3 max-w-lg mx-auto mb-8 bg-transparent border-none p-0 gap-4">
             <TabsTrigger value="home" className="data-[state=active]:bg-white data-[state=active]:text-black data-[state=active]:border-2 data-[state=active]:border-black text-gray-500 bg-transparent border-2 border-transparent text-base font-bold rounded-xl px-8 py-3 hover:bg-gray-50">Home</TabsTrigger>
             <TabsTrigger value="vision" className="data-[state=active]:bg-white data-[state=active]:text-black data-[state=active]:border-2 data-[state=active]:border-black text-gray-500 bg-transparent border-2 border-transparent font-bold rounded-xl px-8 py-3 hover:bg-gray-50">Our Vision</TabsTrigger>
+            <TabsTrigger value="contact" className="data-[state=active]:bg-white data-[state=active]:text-black data-[state=active]:border-2 data-[state=active]:border-black text-gray-500 bg-transparent border-2 border-transparent font-bold rounded-xl px-8 py-3 hover:bg-gray-50">Contact</TabsTrigger>
           </TabsList>
           
           <TabsContent value="home">
@@ -222,8 +225,110 @@ const Index = () => {
               </div>
             </div>
           </TabsContent>
+          
+          <TabsContent value="contact">
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-blue-100/50 p-8 md:p-12">
+              <div className="max-w-4xl mx-auto py-12">
+                <div className="text-center mb-16">
+                  <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-4">Contact Us</h1>
+                  <p className="text-xl text-gray-600 font-light">Get in touch with our team</p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                  {/* Contact Information */}
+                  <div className="space-y-8">
+                    <h2 className="text-3xl font-bold text-gray-800 mb-6">Get In Touch</h2>
+                    
+                    <div className="space-y-6">
+                      <div className="flex items-center space-x-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl flex items-center justify-center">
+                          <Mail className="w-6 h-6 text-blue-600" />
+                        </div>
+                        <div>
+                          <h3 className="text-lg font-semibold text-gray-800">Email</h3>
+                          <p className="text-gray-600">hello@fidoai.com</p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center space-x-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-xl flex items-center justify-center">
+                          <Phone className="w-6 h-6 text-emerald-600" />
+                        </div>
+                        <div>
+                          <h3 className="text-lg font-semibold text-gray-800">Phone</h3>
+                          <p className="text-gray-600">+1 (555) 123-4567</p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center space-x-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-purple-100 to-purple-200 rounded-xl flex items-center justify-center">
+                          <MapPin className="w-6 h-6 text-purple-600" />
+                        </div>
+                        <div>
+                          <h3 className="text-lg font-semibold text-gray-800">Office</h3>
+                          <p className="text-gray-600">San Francisco, CA</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Contact Form */}
+                  <div className="bg-white/60 backdrop-blur-sm rounded-xl p-8 border border-blue-100/50">
+                    <h2 className="text-2xl font-bold text-gray-800 mb-6">Send us a message</h2>
+                    <form className="space-y-6">
+                      <div>
+                        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                        <input
+                          type="text"
+                          id="name"
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                          placeholder="Your name"
+                        />
+                      </div>
+
+                      <div>
+                        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                        <input
+                          type="email"
+                          id="email"
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                          placeholder="your@email.com"
+                        />
+                      </div>
+
+                      <div>
+                        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                        <textarea
+                          id="message"
+                          rows={4}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+                          placeholder="Tell us how we can help you..."
+                        />
+                      </div>
+
+                      <Button 
+                        type="submit" 
+                        className="w-full bg-gradient-to-r from-blue-500 to-sky-500 hover:from-blue-600 hover:to-sky-600 text-white py-3 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200"
+                      >
+                        Send Message
+                      </Button>
+                    </form>
+                  </div>
+                </div>
+
+                <div className="text-center py-12 bg-gradient-to-t from-blue-50/50 to-transparent rounded-2xl mt-12">
+                  <h3 className="text-2xl font-bold text-gray-800 mb-6">Ready to Get Started?</h3>
+                  <Button size="lg" className="bg-gradient-to-r from-blue-500 to-sky-500 hover:from-blue-600 hover:to-sky-600 text-white px-10 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 inline-flex items-center gap-2" onClick={handleTryFido}>
+                    Try Fido For Free
+                    <ExternalLink className="w-4 h-4" />
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </TabsContent>
         </Tabs>
       </div>
     </div>;
 };
+
 export default Index;

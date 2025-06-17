@@ -13,9 +13,9 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-sky-50 to-cyan-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
         <Tabs defaultValue="home" className="w-full">
-          <TabsList className="grid w-full grid-cols-2 max-w-md mx-auto mb-8 bg-white/80 backdrop-blur-sm border border-blue-100">
-            <TabsTrigger value="home" className="data-[state=active]:bg-blue-100 data-[state=active]:text-blue-800 text-base font-bold rounded-none">Home</TabsTrigger>
-            <TabsTrigger value="vision" className="data-[state=active]:bg-blue-100 data-[state=active]:text-blue-800 font-bold">Fido's Purpose</TabsTrigger>
+          <TabsList className="grid w-full grid-cols-2 max-w-md mx-auto mb-8 bg-transparent border-none p-0 gap-4">
+            <TabsTrigger value="home" className="data-[state=active]:bg-white data-[state=active]:text-black data-[state=active]:border-2 data-[state=active]:border-black text-gray-500 bg-transparent border-2 border-transparent text-base font-bold rounded-xl px-8 py-3 hover:bg-gray-50">Home</TabsTrigger>
+            <TabsTrigger value="vision" className="data-[state=active]:bg-white data-[state=active]:text-black data-[state=active]:border-2 data-[state=active]:border-black text-gray-500 bg-transparent border-2 border-transparent font-bold rounded-xl px-8 py-3 hover:bg-gray-50">Our Vision</TabsTrigger>
           </TabsList>
           
           <TabsContent value="home">

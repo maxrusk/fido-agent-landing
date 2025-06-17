@@ -140,87 +140,165 @@ const Index = () => {
           </TabsContent>
           
           <TabsContent value="vision">
-            <div className="max-w-4xl mx-auto py-12">
-              <div className="text-center mb-16">
-                <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-4">Our Vision</h1>
-                <p className="text-xl text-gray-600 font-light">A Trusted Partner for the Next Generation of Entrepreneurs</p>
+            <div className="max-w-5xl mx-auto py-16">
+              <div className="text-center mb-20">
+                <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6 leading-tight">Our Vision</h1>
+                <p className="text-2xl text-gray-600 font-light max-w-3xl mx-auto">A Trusted Partner for the Next Generation of Entrepreneurs</p>
               </div>
 
-              <div className="prose prose-lg max-w-none text-gray-700 space-y-8">
-                <div className="text-xl leading-relaxed font-light">
-                  <p className="mb-6">Every business starts with a goal.</p>
-                  <p className="mb-2">Sometimes it's to earn more for your family.</p>
-                  <p className="mb-2">Sometimes it's to create freedom, stability, or something entirely new.</p>
-                  <p className="mb-6">No matter the reason, starting and growing a business takes courage.</p>
-                  <p className="mb-6 font-medium">At Fido, we understand the realities of that journey.</p>
-                  <p className="mb-2">You wear every hat. You face every decision. You often go it alone.</p>
-                  <p className="font-semibold">We built Fido to change that.</p>
+              <div className="space-y-16">
+                {/* Opening Section */}
+                <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-12 border border-blue-100/50">
+                  <div className="text-center space-y-6">
+                    <p className="text-2xl text-gray-700 font-light italic leading-relaxed">
+                      "Every business starts with a goal."
+                    </p>
+                    <div className="space-y-4 text-lg text-gray-600 font-light max-w-3xl mx-auto">
+                      <p>Sometimes it's to earn more for your family.</p>
+                      <p>Sometimes it's to create freedom, stability, or something entirely new.</p>
+                      <p className="text-blue-600 font-medium">No matter the reason, starting and growing a business takes courage.</p>
+                    </div>
+                    <div className="pt-6 border-t border-gray-200">
+                      <p className="text-xl text-gray-800 font-semibold">At Fido, we understand the realities of that journey.</p>
+                      <p className="text-lg text-gray-600 font-light mt-2">You wear every hat. You face every decision. You often go it alone.</p>
+                      <p className="text-xl text-blue-600 font-bold mt-4">We built Fido to change that.</p>
+                    </div>
+                  </div>
                 </div>
 
-                <div>
-                  <h2 className="text-3xl font-bold text-gray-800 mb-6">Built on Trust, Designed to Help</h2>
-                  <p className="text-xl mb-6 font-light">Fido is your business co-pilot, a reliable, intelligent system that helps you get more done with less effort.</p>
-                  <p className="text-lg mb-4 font-light">From day one, it works alongside you to:</p>
-                  <ul className="text-lg space-y-2 mb-6 pl-6 font-light">
-                    <li>• Create your website or landing page</li>
-                    <li>• Write content and ads that attract customers</li>
-                    <li>• Help you apply for funding and build business credit</li>
-                    <li>• Track performance and suggest improvements automatically</li>
-                  </ul>
-                  <p className="text-lg font-light">It is consistent. It is proactive. And it always keeps your goals in focus.</p>
+                {/* Built on Trust Section */}
+                <div className="grid md:grid-cols-2 gap-12 items-center">
+                  <div>
+                    <h2 className="text-4xl font-bold text-gray-800 mb-6 leading-tight">Built on Trust, Designed to Help</h2>
+                    <p className="text-xl text-gray-600 font-light mb-6 leading-relaxed">
+                      Fido is your business co-pilot, a reliable, intelligent system that helps you get more done with less effort.
+                    </p>
+                    <p className="text-lg text-gray-700 font-medium mb-4">From day one, it works alongside you to:</p>
+                  </div>
+                  <div className="bg-gradient-to-br from-blue-50 to-sky-50 rounded-2xl p-8 border border-blue-100">
+                    <ul className="space-y-4 text-lg text-gray-700">
+                      <li className="flex items-start">
+                        <span className="text-blue-500 mr-3 mt-1">•</span>
+                        <span className="font-light">Create your website or landing page</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-blue-500 mr-3 mt-1">•</span>
+                        <span className="font-light">Write content and ads that attract customers</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-blue-500 mr-3 mt-1">•</span>
+                        <span className="font-light">Help you apply for funding and build business credit</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-blue-500 mr-3 mt-1">•</span>
+                        <span className="font-light">Track performance and suggest improvements automatically</span>
+                      </li>
+                    </ul>
+                    <p className="text-lg text-gray-800 font-medium mt-6 pt-6 border-t border-blue-200">
+                      It is consistent. It is proactive. And it always keeps your goals in focus.
+                    </p>
+                  </div>
                 </div>
 
-                <div>
-                  <h2 className="text-3xl font-bold text-gray-800 mb-6">Agentic Intelligence, Applied to Your Business</h2>
-                  <p className="text-xl mb-4 font-light">Fido is powered by a new class of AI, what we call agentic intelligence.</p>
-                  <p className="text-lg mb-6 font-light">It is not just another chatbot or template tool. It is built to act on your behalf.</p>
-                  <p className="text-lg mb-4 font-light">This means:</p>
-                  <ul className="text-lg space-y-2 mb-6 pl-6 font-light">
-                    <li>• You spend less time figuring out what to do next</li>
-                    <li>• You reduce the trial-and-error of growth</li>
-                    <li>• You stay focused on your strengths while Fido handles the rest</li>
-                  </ul>
-                  <p className="text-lg font-light">Whether you are launching, growing, or refining your business, Fido adapts to where you are and helps move you forward.</p>
+                {/* Agentic Intelligence Section */}
+                <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-12 border border-blue-100/50">
+                  <h2 className="text-4xl font-bold text-gray-800 mb-8 text-center">Agentic Intelligence, Applied to Your Business</h2>
+                  <div className="grid md:grid-cols-3 gap-8">
+                    <div className="text-center">
+                      <div className="w-16 h-16 bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <span className="text-2xl">🤖</span>
+                      </div>
+                      <p className="text-lg text-gray-700 font-light">Not just another chatbot or template tool</p>
+                    </div>
+                    <div className="text-center">
+                      <div className="w-16 h-16 bg-gradient-to-br from-sky-100 to-sky-200 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <span className="text-2xl">⚡</span>
+                      </div>
+                      <p className="text-lg text-gray-700 font-light">Built to act on your behalf automatically</p>
+                    </div>
+                    <div className="text-center">
+                      <div className="w-16 h-16 bg-gradient-to-br from-cyan-100 to-cyan-200 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <span className="text-2xl">🎯</span>
+                      </div>
+                      <p className="text-lg text-gray-700 font-light">Adapts to where you are and moves you forward</p>
+                    </div>
+                  </div>
+                  <div className="mt-12 max-w-3xl mx-auto">
+                    <p className="text-xl text-blue-600 font-medium text-center mb-6">This means:</p>
+                    <div className="grid md:grid-cols-3 gap-6 text-center">
+                      <p className="text-lg text-gray-600 font-light">Less time figuring out what to do next</p>
+                      <p className="text-lg text-gray-600 font-light">Reduced trial-and-error of growth</p>
+                      <p className="text-lg text-gray-600 font-light">Focus on your strengths while Fido handles the rest</p>
+                    </div>
+                  </div>
                 </div>
 
-                <div>
-                  <h2 className="text-3xl font-bold text-gray-800 mb-6">For Business Owners Who Do It All</h2>
-                  <p className="text-lg mb-4 font-light">We didn't build Fido for tech companies or corporate teams.</p>
-                  <p className="text-lg mb-4 font-light">We built it for people doing everything themselves:</p>
-                  <ul className="text-lg space-y-2 mb-6 pl-6 font-light">
-                    <li>• The freelancer ready to grow</li>
-                    <li>• The local business owner bringing in new clients</li>
-                    <li>• The founder applying for a loan for the first time</li>
-                    <li>• The seller turning side income into a real operation</li>
-                  </ul>
-                  <p className="text-lg font-light">Fido simplifies what used to be complex so you can spend less time managing systems and more time growing your business.</p>
+                {/* Target Audience Section */}
+                <div className="text-center">
+                  <h2 className="text-4xl font-bold text-gray-800 mb-8">For Business Owners Who Do It All</h2>
+                  <p className="text-xl text-gray-600 font-light mb-8 max-w-3xl mx-auto">
+                    We didn't build Fido for tech companies or corporate teams. We built it for people doing everything themselves:
+                  </p>
+                  <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div className="bg-gradient-to-br from-blue-50 to-sky-50 rounded-xl p-6 border border-blue-100">
+                      <h3 className="text-lg font-semibold text-gray-800 mb-2">The Freelancer</h3>
+                      <p className="text-gray-600 font-light">Ready to grow beyond solo work</p>
+                    </div>
+                    <div className="bg-gradient-to-br from-emerald-50 to-green-50 rounded-xl p-6 border border-emerald-100">
+                      <h3 className="text-lg font-semibold text-gray-800 mb-2">The Local Business Owner</h3>
+                      <p className="text-gray-600 font-light">Bringing in new clients</p>
+                    </div>
+                    <div className="bg-gradient-to-br from-purple-50 to-violet-50 rounded-xl p-6 border border-purple-100">
+                      <h3 className="text-lg font-semibold text-gray-800 mb-2">The First-Time Founder</h3>
+                      <p className="text-gray-600 font-light">Applying for a loan for the first time</p>
+                    </div>
+                    <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-6 border border-amber-100">
+                      <h3 className="text-lg font-semibold text-gray-800 mb-2">The Side Hustler</h3>
+                      <p className="text-gray-600 font-light">Turning income into a real operation</p>
+                    </div>
+                  </div>
                 </div>
 
-                <div>
-                  <h2 className="text-3xl font-bold text-gray-800 mb-6">What We Stand For</h2>
-                  <p className="text-xl mb-6 font-medium">Helping small business owners succeed, faster, easier, and more confidently, through intelligent, trustworthy technology.</p>
-                  <p className="text-lg mb-2 font-light">We believe technology should work like a partner, not a puzzle.</p>
-                  <p className="text-lg mb-2 font-light">That automation should feel human, not robotic.</p>
-                  <p className="text-lg mb-6 font-light">And that financial tools should empower you, not slow you down.</p>
-                  <p className="text-lg font-semibold">That is what Fido delivers.</p>
+                {/* Values Section */}
+                <div className="bg-gradient-to-r from-blue-600 to-sky-600 rounded-2xl p-12 text-white text-center">
+                  <h2 className="text-4xl font-bold mb-8">What We Stand For</h2>
+                  <p className="text-2xl font-light mb-8 max-w-4xl mx-auto leading-relaxed">
+                    Helping small business owners succeed, faster, easier, and more confidently, through intelligent, trustworthy technology.
+                  </p>
+                  <div className="grid md:grid-cols-3 gap-8 text-lg font-light">
+                    <p>Technology should work like a partner, not a puzzle</p>
+                    <p>Automation should feel human, not robotic</p>
+                    <p>Financial tools should empower you, not slow you down</p>
+                  </div>
+                  <p className="text-2xl font-bold mt-8">That is what Fido delivers.</p>
                 </div>
 
-                <div>
-                  <h2 className="text-3xl font-bold text-gray-800 mb-6">Moving Forward, Together</h2>
-                  <p className="text-lg mb-6 font-light">We are building Fido for the long haul because we know your journey doesn't end at launch.</p>
-                  <p className="text-lg mb-2 font-light">It evolves.</p>
-                  <p className="text-lg mb-2 font-light">It hits friction.</p>
-                  <p className="text-lg mb-6 font-light">It requires new ideas and smart tools.</p>
-                  <p className="text-lg mb-6 font-medium">Fido is here for all of it.</p>
-                  <p className="text-lg mb-2 font-light">Clear tools. Simple guidance. Real results.</p>
-                  <p className="text-lg font-light">That is what we believe the future of business should feel like.</p>
+                {/* Moving Forward Section */}
+                <div className="text-center">
+                  <h2 className="text-4xl font-bold text-gray-800 mb-8">Moving Forward, Together</h2>
+                  <div className="max-w-4xl mx-auto space-y-6 text-lg text-gray-600 font-light">
+                    <p>We are building Fido for the long haul because we know your journey doesn't end at launch.</p>
+                    <div className="flex justify-center space-x-8 text-blue-600 font-medium py-6">
+                      <span>It evolves.</span>
+                      <span>•</span>
+                      <span>It hits friction.</span>
+                      <span>•</span>
+                      <span>It requires new ideas.</span>
+                    </div>
+                    <p className="text-xl text-gray-800 font-semibold">Fido is here for all of it.</p>
+                    <div className="pt-6">
+                      <p className="text-xl text-blue-600 font-medium">Clear tools. Simple guidance. Real results.</p>
+                      <p className="text-lg text-gray-700 mt-2">That is what we believe the future of business should feel like.</p>
+                    </div>
+                  </div>
                 </div>
 
-                <div className="text-center py-12 bg-gradient-to-t from-blue-50/50 to-transparent rounded-2xl">
-                  <h3 className="text-2xl font-bold text-gray-800 mb-6">Try Fido Copilot For Free</h3>
-                  <Button size="lg" className="bg-gradient-to-r from-blue-500 to-sky-500 hover:from-blue-600 hover:to-sky-600 text-white px-10 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 inline-flex items-center gap-2" onClick={handleTryFido}>
+                {/* Final CTA */}
+                <div className="text-center py-16 bg-gradient-to-t from-blue-50/50 to-transparent rounded-2xl">
+                  <h3 className="text-3xl font-bold text-gray-800 mb-6">Try Fido Copilot For Free</h3>
+                  <Button size="lg" className="bg-gradient-to-r from-blue-500 to-sky-500 hover:from-blue-600 hover:to-sky-600 text-white px-12 py-5 text-xl font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 inline-flex items-center gap-3" onClick={handleTryFido}>
                     Try Fido For Free
-                    <ExternalLink className="w-4 h-4" />
+                    <ExternalLink className="w-5 h-5" />
                   </Button>
                 </div>
               </div>

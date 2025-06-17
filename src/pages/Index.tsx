@@ -1,21 +1,17 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Calendar, Laptop, LineChart, BadgeDollarSign, ExternalLink } from "lucide-react";
-
 const Index = () => {
   const handleTryFido = () => {
     window.open('https://chatgpt.com/g/g-6849ed2b9ea48191a53c4f016cf0b29c-sba-loan-guidance-agent', '_blank');
   };
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-sky-50 to-cyan-50">
+  return <div className="min-h-screen bg-gradient-to-br from-blue-50 via-sky-50 to-cyan-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
         <Tabs defaultValue="home" className="w-full">
           <TabsList className="grid w-full grid-cols-2 max-w-md mx-auto mb-8 bg-white/80 backdrop-blur-sm border border-blue-100">
-            <TabsTrigger value="home" className="data-[state=active]:bg-blue-100 data-[state=active]:text-blue-800">Home</TabsTrigger>
-            <TabsTrigger value="vision" className="data-[state=active]:bg-blue-100 data-[state=active]:text-blue-800">Our Vision</TabsTrigger>
+            <TabsTrigger value="home" className="data-[state=active]:bg-blue-100 data-[state=active]:text-blue-800 text-base font-normal">Home</TabsTrigger>
+            <TabsTrigger value="vision" className="data-[state=active]:bg-blue-100 data-[state=active]:text-blue-800 font-bold">Fido's Purpose</TabsTrigger>
           </TabsList>
           
           <TabsContent value="home">
@@ -39,11 +35,7 @@ const Index = () => {
                   </p>
                   
                   <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <Button 
-                      size="lg" 
-                      className="bg-gradient-to-r from-blue-500 to-sky-500 hover:from-blue-600 hover:to-sky-600 text-white px-10 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200"
-                      onClick={handleTryFido}
-                    >
+                    <Button size="lg" className="bg-gradient-to-r from-blue-500 to-sky-500 hover:from-blue-600 hover:to-sky-600 text-white px-10 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200" onClick={handleTryFido}>
                       Get Started Free
                     </Button>
                     <p className="text-gray-500 text-sm font-light">
@@ -133,11 +125,7 @@ const Index = () => {
                 <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
                   Start building smarter with AI-powered business tools designed for growth
                 </p>
-                <Button 
-                  size="lg" 
-                  className="bg-gradient-to-r from-blue-500 to-sky-500 hover:from-blue-600 hover:to-sky-600 text-white px-12 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200"
-                  onClick={handleTryFido}
-                >
+                <Button size="lg" className="bg-gradient-to-r from-blue-500 to-sky-500 hover:from-blue-600 hover:to-sky-600 text-white px-12 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200" onClick={handleTryFido}>
                   Get Started Free
                 </Button>
                 <p className="mt-6 text-sm text-gray-500 font-light">
@@ -248,11 +236,7 @@ const Index = () => {
 
                 <div className="text-center py-12 bg-gradient-to-t from-orange-50/50 to-transparent rounded-2xl">
                   <h3 className="text-2xl font-bold text-gray-800 mb-6">Try Fido Copilot For Free</h3>
-                  <Button 
-                    size="lg" 
-                    className="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-10 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 inline-flex items-center gap-2"
-                    onClick={handleTryFido}
-                  >
+                  <Button size="lg" className="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-10 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 inline-flex items-center gap-2" onClick={handleTryFido}>
                     Try Fido For Free
                     <ExternalLink className="w-4 h-4" />
                   </Button>
@@ -262,8 +246,6 @@ const Index = () => {
           </TabsContent>
         </Tabs>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;

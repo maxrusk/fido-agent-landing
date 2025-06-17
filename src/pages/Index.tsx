@@ -1,12 +1,16 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Calendar, Laptop, LineChart, BadgeDollarSign, ExternalLink } from "lucide-react";
+
 const Index = () => {
   const handleTryFido = () => {
     window.open('https://chatgpt.com/g/g-6849ed2b9ea48191a53c4f016cf0b29c-sba-loan-guidance-agent', '_blank');
   };
-  return <div className="min-h-screen bg-gradient-to-br from-blue-50 via-sky-50 to-cyan-50">
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-sky-50 to-cyan-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
         <Tabs defaultValue="home" className="w-full">
           <TabsList className="grid w-full grid-cols-2 max-w-md mx-auto mb-8 bg-white/80 backdrop-blur-sm border border-blue-100">
@@ -47,7 +51,7 @@ const Index = () => {
             </div>
 
             {/* Features Section */}
-            <div className="py-24 bg-white/60 backdrop-blur-sm rounded-2xl mb-8 border border-amber-100/50">
+            <div className="py-24 bg-white/60 backdrop-blur-sm rounded-2xl mb-8 border border-blue-100/50">
               <div className="text-center mb-20">
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
                   Everything You Need to Grow
@@ -58,7 +62,7 @@ const Index = () => {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-                <Card className="bg-white/80 backdrop-blur-sm border-amber-100 shadow-sm hover:shadow-lg transition-all duration-300 rounded-xl">
+                <Card className="bg-white/80 backdrop-blur-sm border-blue-100 shadow-sm hover:shadow-lg transition-all duration-300 rounded-xl">
                   <CardContent className="p-8">
                     <div className="w-14 h-14 bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl flex items-center justify-center mb-6">
                       <Laptop className="w-7 h-7 text-blue-600" />
@@ -72,7 +76,7 @@ const Index = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="bg-white/80 backdrop-blur-sm border-amber-100 shadow-sm hover:shadow-lg transition-all duration-300 rounded-xl">
+                <Card className="bg-white/80 backdrop-blur-sm border-blue-100 shadow-sm hover:shadow-lg transition-all duration-300 rounded-xl">
                   <CardContent className="p-8">
                     <div className="w-14 h-14 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-xl flex items-center justify-center mb-6">
                       <BadgeDollarSign className="w-7 h-7 text-emerald-600" />
@@ -86,7 +90,7 @@ const Index = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="bg-white/80 backdrop-blur-sm border-amber-100 shadow-sm hover:shadow-lg transition-all duration-300 rounded-xl">
+                <Card className="bg-white/80 backdrop-blur-sm border-blue-100 shadow-sm hover:shadow-lg transition-all duration-300 rounded-xl">
                   <CardContent className="p-8">
                     <div className="w-14 h-14 bg-gradient-to-br from-purple-100 to-purple-200 rounded-xl flex items-center justify-center mb-6">
                       <LineChart className="w-7 h-7 text-purple-600" />
@@ -100,10 +104,10 @@ const Index = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="bg-white/80 backdrop-blur-sm border-amber-100 shadow-sm hover:shadow-lg transition-all duration-300 rounded-xl">
+                <Card className="bg-white/80 backdrop-blur-sm border-blue-100 shadow-sm hover:shadow-lg transition-all duration-300 rounded-xl">
                   <CardContent className="p-8">
-                    <div className="w-14 h-14 bg-gradient-to-br from-amber-100 to-amber-200 rounded-xl flex items-center justify-center mb-6">
-                      <Calendar className="w-7 h-7 text-amber-600" />
+                    <div className="w-14 h-14 bg-gradient-to-br from-sky-100 to-sky-200 rounded-xl flex items-center justify-center mb-6">
+                      <Calendar className="w-7 h-7 text-sky-600" />
                     </div>
                     <h3 className="text-2xl font-semibold text-gray-800 mb-4">
                       Built with Agentic Intelligence
@@ -117,7 +121,7 @@ const Index = () => {
             </div>
 
             {/* CTA Section */}
-            <div className="py-24 bg-gradient-to-t from-amber-50/50 to-transparent rounded-2xl">
+            <div className="py-24 bg-gradient-to-t from-blue-50/50 to-transparent rounded-2xl">
               <div className="max-w-4xl mx-auto text-center">
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
                   Ready to Transform Your Business?
@@ -138,10 +142,8 @@ const Index = () => {
           <TabsContent value="vision">
             <div className="max-w-4xl mx-auto py-12">
               <div className="text-center mb-16">
-                <div className="text-2xl text-amber-400 mb-4">⸻</div>
                 <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-4">Our Vision</h1>
                 <p className="text-xl text-gray-600 font-light">A Trusted Partner for the Next Generation of Entrepreneurs</p>
-                <div className="text-2xl text-amber-400 mt-4">⸻</div>
               </div>
 
               <div className="prose prose-lg max-w-none text-gray-700 space-y-8">
@@ -153,10 +155,6 @@ const Index = () => {
                   <p className="mb-6 font-medium">At Fido, we understand the realities of that journey.</p>
                   <p className="mb-2">You wear every hat. You face every decision. You often go it alone.</p>
                   <p className="font-semibold">We built Fido to change that.</p>
-                </div>
-
-                <div className="text-center py-8">
-                  <div className="text-2xl text-amber-400">⸻</div>
                 </div>
 
                 <div>
@@ -172,10 +170,6 @@ const Index = () => {
                   <p className="text-lg font-light">It is consistent. It is proactive. And it always keeps your goals in focus.</p>
                 </div>
 
-                <div className="text-center py-8">
-                  <div className="text-2xl text-amber-400">⸻</div>
-                </div>
-
                 <div>
                   <h2 className="text-3xl font-bold text-gray-800 mb-6">Agentic Intelligence, Applied to Your Business</h2>
                   <p className="text-xl mb-4 font-light">Fido is powered by a new class of AI, what we call agentic intelligence.</p>
@@ -187,10 +181,6 @@ const Index = () => {
                     <li>• You stay focused on your strengths while Fido handles the rest</li>
                   </ul>
                   <p className="text-lg font-light">Whether you are launching, growing, or refining your business, Fido adapts to where you are and helps move you forward.</p>
-                </div>
-
-                <div className="text-center py-8">
-                  <div className="text-2xl text-amber-400">⸻</div>
                 </div>
 
                 <div>
@@ -206,10 +196,6 @@ const Index = () => {
                   <p className="text-lg font-light">Fido simplifies what used to be complex so you can spend less time managing systems and more time growing your business.</p>
                 </div>
 
-                <div className="text-center py-8">
-                  <div className="text-2xl text-amber-400">⸻</div>
-                </div>
-
                 <div>
                   <h2 className="text-3xl font-bold text-gray-800 mb-6">What We Stand For</h2>
                   <p className="text-xl mb-6 font-medium">Helping small business owners succeed, faster, easier, and more confidently, through intelligent, trustworthy technology.</p>
@@ -217,10 +203,6 @@ const Index = () => {
                   <p className="text-lg mb-2 font-light">That automation should feel human, not robotic.</p>
                   <p className="text-lg mb-6 font-light">And that financial tools should empower you, not slow you down.</p>
                   <p className="text-lg font-semibold">That is what Fido delivers.</p>
-                </div>
-
-                <div className="text-center py-8">
-                  <div className="text-2xl text-amber-400">⸻</div>
                 </div>
 
                 <div>
@@ -234,9 +216,9 @@ const Index = () => {
                   <p className="text-lg font-light">That is what we believe the future of business should feel like.</p>
                 </div>
 
-                <div className="text-center py-12 bg-gradient-to-t from-orange-50/50 to-transparent rounded-2xl">
+                <div className="text-center py-12 bg-gradient-to-t from-blue-50/50 to-transparent rounded-2xl">
                   <h3 className="text-2xl font-bold text-gray-800 mb-6">Try Fido Copilot For Free</h3>
-                  <Button size="lg" className="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-10 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 inline-flex items-center gap-2" onClick={handleTryFido}>
+                  <Button size="lg" className="bg-gradient-to-r from-blue-500 to-sky-500 hover:from-blue-600 hover:to-sky-600 text-white px-10 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 inline-flex items-center gap-2" onClick={handleTryFido}>
                     Try Fido For Free
                     <ExternalLink className="w-4 h-4" />
                   </Button>
@@ -246,6 +228,8 @@ const Index = () => {
           </TabsContent>
         </Tabs>
       </div>
-    </div>;
+    </div>
+  );
 };
+
 export default Index;

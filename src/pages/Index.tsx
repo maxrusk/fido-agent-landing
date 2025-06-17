@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Calendar, Laptop, LineChart, BadgeDollarSign, ExternalLink, Mail, Phone, MapPin } from "lucide-react";
+import { Calendar, Laptop, LineChart, BadgeDollarSign, ExternalLink, Mail, Linkedin, MapPin } from "lucide-react";
+
 const Index = () => {
   const handleTryFido = () => {
     window.open('https://chatgpt.com/g/g-6849ed2b9ea48191a53c4f016cf0b29c-sba-loan-guidance-agent', '_blank');
@@ -250,11 +251,11 @@ const Index = () => {
 
                       <div className="flex items-center space-x-4">
                         <div className="w-12 h-12 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-xl flex items-center justify-center">
-                          <Phone className="w-6 h-6 text-emerald-600" />
+                          <Linkedin className="w-6 h-6 text-emerald-600" />
                         </div>
                         <div>
-                          <h3 className="text-lg font-semibold text-gray-800">Phone</h3>
-                          <p className="text-gray-600">+1 (555) 123-4567</p>
+                          <h3 className="text-lg font-semibold text-gray-800">LinkedIn</h3>
+                          <p className="text-gray-600">Fido Financial</p>
                         </div>
                       </div>
 

@@ -35,9 +35,7 @@ const Index = () => {
                   </p>
                   
                   <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <Button size="lg" className="bg-gradient-to-r from-blue-500 to-sky-500 hover:from-blue-600 hover:to-sky-600 text-white px-10 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200" onClick={handleTryFido}>
-                      Get Started Free
-                    </Button>
+                    <Button size="lg" className="bg-gradient-to-r from-blue-500 to-sky-500 hover:from-blue-600 hover:to-sky-600 text-white px-10 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200" onClick={handleTryFido}>Try  our SBA Copilot (beta)</Button>
                     <p className="text-gray-500 text-sm font-light">
                       No credit card required
                     </p>

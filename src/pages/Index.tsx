@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -9,6 +10,11 @@ const Index = () => {
   };
   return <div className="min-h-screen bg-gradient-to-br from-blue-50 via-sky-50 to-cyan-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+        {/* Logo in top left corner */}
+        <div className="absolute top-4 left-4">
+          <img src="/lovable-uploads/41aeadea-b653-401f-864c-c50c48d8b9b5.png" alt="Fido Logo" className="w-12 h-12" />
+        </div>
+        
         <Tabs defaultValue="home" className="w-full">
           <TabsList className="grid w-full grid-cols-3 max-w-lg mx-auto mb-8 bg-transparent border-none p-0 gap-4">
             <TabsTrigger value="home" className="data-[state=active]:bg-white data-[state=active]:text-black data-[state=active]:border-2 data-[state=active]:border-black text-gray-500 bg-transparent border-2 border-transparent text-base font-bold rounded-xl px-8 py-3 hover:bg-gray-50">Home</TabsTrigger>

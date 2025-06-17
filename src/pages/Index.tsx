@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Calendar, Laptop, LineChart, BadgeDollarSign, ExternalLink, Mail, Linkedin, MapPin } from "lucide-react";
+import { Calendar, Laptop, LineChart, BadgeDollarSign, ExternalLink, Mail, Linkedin, MessageCircle } from "lucide-react";
 
 const Index = () => {
   const handleTryFido = () => {
@@ -262,11 +262,11 @@ const Index = () => {
 
                       <div className="flex items-center space-x-4">
                         <div className="w-12 h-12 bg-gradient-to-br from-purple-100 to-purple-200 rounded-xl flex items-center justify-center">
-                          <MapPin className="w-6 h-6 text-purple-600" />
+                          <MessageCircle className="w-6 h-6 text-purple-600" />
                         </div>
                         <div>
-                          <h3 className="text-lg font-semibold text-gray-800">Office</h3>
-                          <p className="text-gray-600">San Francisco, CA</p>
+                          <h3 className="text-lg font-semibold text-gray-800">Reddit</h3>
+                          <p className="text-gray-600">Fido Financial</p>
                         </div>
                       </div>
                     </div>

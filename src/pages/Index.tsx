@@ -131,7 +131,7 @@ const Index = () => {
                   Ready to Transform Your Business?
                 </h2>
                 <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
-                  Join thousands of entrepreneurs who trust Fido to accelerate their growth
+                  Start building smarter with AI-powered business tools designed for growth
                 </p>
                 <Button 
                   size="lg" 

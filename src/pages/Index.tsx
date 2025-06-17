@@ -1,16 +1,12 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Calendar, Laptop, LineChart, BadgeDollarSign, ExternalLink } from "lucide-react";
-
 const Index = () => {
   const handleTryFido = () => {
     window.open('https://chatgpt.com/g/g-6849ed2b9ea48191a53c4f016cf0b29c-sba-loan-guidance-agent', '_blank');
   };
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-sky-50 to-cyan-50">
+  return <div className="min-h-screen bg-gradient-to-br from-blue-50 via-sky-50 to-cyan-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
         <Tabs defaultValue="home" className="w-full">
           <TabsList className="grid w-full grid-cols-2 max-w-md mx-auto mb-8 bg-transparent border-none p-0 gap-4">
@@ -154,7 +150,7 @@ const Index = () => {
                     <p className="mb-2">Sometimes it's to create freedom, stability, or something entirely new.</p>
                     <p className="mb-6">No matter the reason, starting and growing a business takes courage.</p>
                     <p className="mb-6 font-medium">At Fido, we understand the realities of that journey.</p>
-                    <p className="mb-2">You wear every hat. You face every decision. You often go it alone.</p>
+                    <p className="mb-2">You wear every hat. You face every decision. You often go at it alone.</p>
                     <p className="font-semibold">We built Fido to change that.</p>
                   </div>
 
@@ -230,8 +226,6 @@ const Index = () => {
           </TabsContent>
         </Tabs>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;

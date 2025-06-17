@@ -10,12 +10,12 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-rose-50">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-sky-50 to-cyan-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
         <Tabs defaultValue="home" className="w-full">
-          <TabsList className="grid w-full grid-cols-2 max-w-md mx-auto mb-8 bg-white/80 backdrop-blur-sm border border-orange-100">
-            <TabsTrigger value="home" className="data-[state=active]:bg-orange-100 data-[state=active]:text-orange-800">Home</TabsTrigger>
-            <TabsTrigger value="vision" className="data-[state=active]:bg-orange-100 data-[state=active]:text-orange-800">Our Vision</TabsTrigger>
+          <TabsList className="grid w-full grid-cols-2 max-w-md mx-auto mb-8 bg-white/80 backdrop-blur-sm border border-blue-100">
+            <TabsTrigger value="home" className="data-[state=active]:bg-blue-100 data-[state=active]:text-blue-800">Home</TabsTrigger>
+            <TabsTrigger value="vision" className="data-[state=active]:bg-blue-100 data-[state=active]:text-blue-800">Our Vision</TabsTrigger>
           </TabsList>
           
           <TabsContent value="home">
@@ -23,7 +23,7 @@ const Index = () => {
             <div className="relative">
               <div className="pt-12 pb-16">
                 <div className="text-center">
-                  <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-orange-100 to-amber-100 text-orange-800 text-sm font-medium mb-8 border border-orange-200">
+                  <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-blue-100 to-sky-100 text-blue-800 text-sm font-medium mb-8 border border-blue-200">
                     <span className="mr-2">🤖</span>
                     Powered by Agentic Intelligence
                   </div>
@@ -31,7 +31,7 @@ const Index = () => {
                   <h1 className="text-5xl md:text-7xl font-bold text-gray-800 mb-6 leading-tight">
                     Empower Your Business 
                     <br />
-                    <span className="bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">with Fido</span>
+                    <span className="bg-gradient-to-r from-blue-600 to-sky-600 bg-clip-text text-transparent">with Fido</span>
                   </h1>
                   
                   <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
@@ -41,7 +41,7 @@ const Index = () => {
                   <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                     <Button 
                       size="lg" 
-                      className="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-10 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200"
+                      className="bg-gradient-to-r from-blue-500 to-sky-500 hover:from-blue-600 hover:to-sky-600 text-white px-10 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200"
                       onClick={handleTryFido}
                     >
                       Get Started Free
@@ -55,7 +55,7 @@ const Index = () => {
             </div>
 
             {/* Features Section */}
-            <div className="py-24 bg-white/60 backdrop-blur-sm rounded-2xl mb-8 border border-orange-100/50">
+            <div className="py-24 bg-white/60 backdrop-blur-sm rounded-2xl mb-8 border border-amber-100/50">
               <div className="text-center mb-20">
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
                   Everything You Need to Grow
@@ -66,7 +66,7 @@ const Index = () => {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-                <Card className="bg-white/80 backdrop-blur-sm border-orange-100 shadow-sm hover:shadow-lg transition-all duration-300 rounded-xl">
+                <Card className="bg-white/80 backdrop-blur-sm border-amber-100 shadow-sm hover:shadow-lg transition-all duration-300 rounded-xl">
                   <CardContent className="p-8">
                     <div className="w-14 h-14 bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl flex items-center justify-center mb-6">
                       <Laptop className="w-7 h-7 text-blue-600" />
@@ -80,7 +80,7 @@ const Index = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="bg-white/80 backdrop-blur-sm border-orange-100 shadow-sm hover:shadow-lg transition-all duration-300 rounded-xl">
+                <Card className="bg-white/80 backdrop-blur-sm border-amber-100 shadow-sm hover:shadow-lg transition-all duration-300 rounded-xl">
                   <CardContent className="p-8">
                     <div className="w-14 h-14 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-xl flex items-center justify-center mb-6">
                       <BadgeDollarSign className="w-7 h-7 text-emerald-600" />
@@ -94,7 +94,7 @@ const Index = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="bg-white/80 backdrop-blur-sm border-orange-100 shadow-sm hover:shadow-lg transition-all duration-300 rounded-xl">
+                <Card className="bg-white/80 backdrop-blur-sm border-amber-100 shadow-sm hover:shadow-lg transition-all duration-300 rounded-xl">
                   <CardContent className="p-8">
                     <div className="w-14 h-14 bg-gradient-to-br from-purple-100 to-purple-200 rounded-xl flex items-center justify-center mb-6">
                       <LineChart className="w-7 h-7 text-purple-600" />
@@ -108,7 +108,7 @@ const Index = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="bg-white/80 backdrop-blur-sm border-orange-100 shadow-sm hover:shadow-lg transition-all duration-300 rounded-xl">
+                <Card className="bg-white/80 backdrop-blur-sm border-amber-100 shadow-sm hover:shadow-lg transition-all duration-300 rounded-xl">
                   <CardContent className="p-8">
                     <div className="w-14 h-14 bg-gradient-to-br from-amber-100 to-amber-200 rounded-xl flex items-center justify-center mb-6">
                       <Calendar className="w-7 h-7 text-amber-600" />
@@ -125,7 +125,7 @@ const Index = () => {
             </div>
 
             {/* CTA Section */}
-            <div className="py-24 bg-gradient-to-t from-orange-50/50 to-transparent rounded-2xl">
+            <div className="py-24 bg-gradient-to-t from-amber-50/50 to-transparent rounded-2xl">
               <div className="max-w-4xl mx-auto text-center">
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
                   Ready to Transform Your Business?
@@ -135,7 +135,7 @@ const Index = () => {
                 </p>
                 <Button 
                   size="lg" 
-                  className="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-12 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200"
+                  className="bg-gradient-to-r from-blue-500 to-sky-500 hover:from-blue-600 hover:to-sky-600 text-white px-12 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200"
                   onClick={handleTryFido}
                 >
                   Get Started Free

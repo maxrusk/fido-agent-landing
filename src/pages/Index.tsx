@@ -156,7 +156,7 @@ const Index = () => {
 
                   <div>
                     <h2 className="text-3xl font-bold text-gray-800 mb-6">Built on Trust, Designed to Help</h2>
-                    <p className="text-xl mb-6 font-light">Fido is your business co-pilot, a reliable, intelligent system that helps you get more done with less effort.</p>
+                    <p className="text-xl mb-6 font-light">Fido is your business co-pilot.  A reliable, trustworthy companion and intelligent system that helps you get more while focusing on what matters.</p>
                     <p className="text-lg mb-4 font-light">From day one, it works alongside you to:</p>
                     <ul className="text-lg space-y-2 mb-6 pl-6 font-light">
                       <li>• Create your website or landing page</li>

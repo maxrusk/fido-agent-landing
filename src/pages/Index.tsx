@@ -27,10 +27,19 @@ const Index = () => {
                     Powered by Agentic Intelligence
                   </div>
                   
+                  {/* Fido Logo Integration */}
+                  <div className="flex items-center justify-center mb-8">
+                    <img 
+                      src="/lovable-uploads/d978fd36-a7f7-4b1d-88bf-5694c664e470.png" 
+                      alt="Fido" 
+                      className="h-20 w-auto"
+                    />
+                  </div>
+                  
                   <h1 className="text-5xl md:text-7xl font-bold text-gray-800 mb-6 leading-tight">
                     Empower Your Business 
                     <br />
-                    <span className="bg-gradient-to-r from-blue-600 to-sky-600 bg-clip-text text-transparent">with Fido</span>
+                    <span className="bg-gradient-to-r from-blue-600 to-sky-600 bg-clip-text text-transparent">with Intelligence</span>
                   </h1>
                   
                   <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
@@ -38,7 +47,7 @@ const Index = () => {
                   </p>
                   
                   <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <Button size="lg" className="bg-gradient-to-r from-blue-500 to-sky-500 hover:from-blue-600 hover:to-sky-600 text-white px-10 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200" onClick={handleTryFido}>Try  our SBA Copilot (beta)</Button>
+                    <Button size="lg" className="bg-gradient-to-r from-blue-500 to-sky-500 hover:from-blue-600 hover:to-sky-600 text-white px-10 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200" onClick={handleTryFido}>Try our SBA Copilot (beta)</Button>
                     <p className="text-gray-500 text-sm font-light">
                       No credit card required
                     </p>
@@ -59,9 +68,9 @@ const Index = () => {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-                <Card className="bg-white/80 backdrop-blur-sm border-blue-100 shadow-sm hover:shadow-lg transition-all duration-300 rounded-xl">
+                <Card className="bg-white/80 backdrop-blur-sm border-blue-100 shadow-sm hover:shadow-lg transition-all duration-300 rounded-xl group">
                   <CardContent className="p-8">
-                    <div className="w-14 h-14 bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl flex items-center justify-center mb-6">
+                    <div className="w-14 h-14 bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                       <Laptop className="w-7 h-7 text-blue-600" />
                     </div>
                     <h3 className="text-2xl font-semibold text-gray-800 mb-4">
@@ -73,9 +82,9 @@ const Index = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="bg-white/80 backdrop-blur-sm border-blue-100 shadow-sm hover:shadow-lg transition-all duration-300 rounded-xl">
+                <Card className="bg-white/80 backdrop-blur-sm border-blue-100 shadow-sm hover:shadow-lg transition-all duration-300 rounded-xl group">
                   <CardContent className="p-8">
-                    <div className="w-14 h-14 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-xl flex items-center justify-center mb-6">
+                    <div className="w-14 h-14 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                       <BadgeDollarSign className="w-7 h-7 text-emerald-600" />
                     </div>
                     <h3 className="text-2xl font-semibold text-gray-800 mb-4">
@@ -87,9 +96,9 @@ const Index = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="bg-white/80 backdrop-blur-sm border-blue-100 shadow-sm hover:shadow-lg transition-all duration-300 rounded-xl">
+                <Card className="bg-white/80 backdrop-blur-sm border-blue-100 shadow-sm hover:shadow-lg transition-all duration-300 rounded-xl group">
                   <CardContent className="p-8">
-                    <div className="w-14 h-14 bg-gradient-to-br from-purple-100 to-purple-200 rounded-xl flex items-center justify-center mb-6">
+                    <div className="w-14 h-14 bg-gradient-to-br from-purple-100 to-purple-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                       <LineChart className="w-7 h-7 text-purple-600" />
                     </div>
                     <h3 className="text-2xl font-semibold text-gray-800 mb-4">
@@ -101,9 +110,9 @@ const Index = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="bg-white/80 backdrop-blur-sm border-blue-100 shadow-sm hover:shadow-lg transition-all duration-300 rounded-xl">
+                <Card className="bg-white/80 backdrop-blur-sm border-blue-100 shadow-sm hover:shadow-lg transition-all duration-300 rounded-xl group">
                   <CardContent className="p-8">
-                    <div className="w-14 h-14 bg-gradient-to-br from-sky-100 to-sky-200 rounded-xl flex items-center justify-center mb-6">
+                    <div className="w-14 h-14 bg-gradient-to-br from-sky-100 to-sky-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                       <Calendar className="w-7 h-7 text-sky-600" />
                     </div>
                     <h3 className="text-2xl font-semibold text-gray-800 mb-4">
@@ -140,6 +149,13 @@ const Index = () => {
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-blue-100/50 p-8 md:p-12">
               <div className="max-w-4xl mx-auto py-12">
                 <div className="text-center mb-16">
+                  <div className="flex items-center justify-center mb-6">
+                    <img 
+                      src="/lovable-uploads/d978fd36-a7f7-4b1d-88bf-5694c664e470.png" 
+                      alt="Fido" 
+                      className="h-16 w-auto opacity-90"
+                    />
+                  </div>
                   <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-4">Our Vision</h1>
                   <p className="text-xl text-gray-600 font-light">A Trusted Partner for the Next Generation of Entrepreneurs</p>
                 </div>
@@ -157,7 +173,7 @@ const Index = () => {
 
                   <div>
                     <h2 className="text-3xl font-bold text-gray-800 mb-6">Built on Trust, Designed to Help</h2>
-                    <p className="text-xl mb-6 font-light">Fido is your business co-pilot.  A reliable, trustworthy companion and intelligent system that helps you get more while focusing on what matters.</p>
+                    <p className="text-xl mb-6 font-light">Fido is your business co-pilot.  A reliable, trustworthy companion and intelligent system that helps you get more while focusing on what matters.</p>
                     <p className="text-lg mb-4 font-light">From day one, it works alongside you to:</p>
                     <ul className="text-lg space-y-2 mb-6 pl-6 font-light">
                       <li>• Create your website or landing page</li>
@@ -230,6 +246,13 @@ const Index = () => {
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-blue-100/50 p-8 md:p-12">
               <div className="max-w-4xl mx-auto py-12">
                 <div className="text-center mb-16">
+                  <div className="flex items-center justify-center mb-6">
+                    <img 
+                      src="/lovable-uploads/d978fd36-a7f7-4b1d-88bf-5694c664e470.png" 
+                      alt="Fido" 
+                      className="h-16 w-auto opacity-90"
+                    />
+                  </div>
                   <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-4">Contact Us</h1>
                   <p className="text-xl text-gray-600 font-light">Get in touch with our team</p>
                 </div>
@@ -240,8 +263,8 @@ const Index = () => {
                     <h2 className="text-3xl font-bold text-gray-800 mb-6">Get In Touch</h2>
                     
                     <div className="space-y-6">
-                      <div className="flex items-center space-x-4">
-                        <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl flex items-center justify-center">
+                      <div className="flex items-center space-x-4 group hover:bg-blue-50/50 rounded-lg p-3 transition-colors duration-200">
+                        <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                           <Mail className="w-6 h-6 text-blue-600" />
                         </div>
                         <div>
@@ -250,8 +273,8 @@ const Index = () => {
                         </div>
                       </div>
 
-                      <div className="flex items-center space-x-4">
-                        <div className="w-12 h-12 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-xl flex items-center justify-center">
+                      <div className="flex items-center space-x-4 group hover:bg-emerald-50/50 rounded-lg p-3 transition-colors duration-200">
+                        <div className="w-12 h-12 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                           <Linkedin className="w-6 h-6 text-emerald-600" />
                         </div>
                         <div>
@@ -260,8 +283,8 @@ const Index = () => {
                         </div>
                       </div>
 
-                      <div className="flex items-center space-x-4">
-                        <div className="w-12 h-12 bg-gradient-to-br from-purple-100 to-purple-200 rounded-xl flex items-center justify-center">
+                      <div className="flex items-center space-x-4 group hover:bg-purple-50/50 rounded-lg p-3 transition-colors duration-200">
+                        <div className="w-12 h-12 bg-gradient-to-br from-purple-100 to-purple-200 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                           <MessageCircle className="w-6 h-6 text-purple-600" />
                         </div>
                         <div>
@@ -278,17 +301,17 @@ const Index = () => {
                     <form className="space-y-6">
                       <div>
                         <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Name</label>
-                        <input type="text" id="name" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Your name" />
+                        <input type="text" id="name" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200" placeholder="Your name" />
                       </div>
 
                       <div>
                         <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">Email</label>
-                        <input type="email" id="email" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="your@email.com" />
+                        <input type="email" id="email" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200" placeholder="your@email.com" />
                       </div>
 
                       <div>
                         <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">Message</label>
-                        <textarea id="message" rows={4} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none" placeholder="Tell us how we can help you..." />
+                        <textarea id="message" rows={4} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none transition-all duration-200" placeholder="Tell us how we can help you..." />
                       </div>
 
                       <Button type="submit" className="w-full bg-gradient-to-r from-blue-500 to-sky-500 hover:from-blue-600 hover:to-sky-600 text-white py-3 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200">

@@ -39,7 +39,7 @@ const Index = () => {
                   <h1 className="text-5xl md:text-7xl font-bold text-gray-800 mb-6 leading-tight">
                     Empower Your Business 
                     <br />
-                    <span className="bg-gradient-to-r from-blue-600 to-sky-600 bg-clip-text text-transparent">with Intelligence</span>
+                    <span className="bg-gradient-to-r from-blue-600 to-sky-600 bg-clip-text text-transparent">with Fido</span>
                   </h1>
                   
                   <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed font-light">

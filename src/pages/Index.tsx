@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Calendar, Laptop, LineChart, BadgeDollarSign, ExternalLink, Mail, Linkedin, MessageCircle } from "lucide-react";
+import { Calendar, Laptop, LineChart, BadgeDollarSign, ExternalLink, Mail, Linkedin, MessageCircle, CheckCircle, ArrowRight } from "lucide-react";
 
 const Index = () => {
   const handleTryFido = () => {
@@ -37,21 +37,59 @@ const Index = () => {
                   </div>
                   
                   <h1 className="text-5xl md:text-7xl font-bold text-gray-800 mb-6 leading-tight">
-                    Empower Your Business 
+                    For Business Owners Who Do It All
                     <br />
-                    <span className="bg-gradient-to-r from-blue-600 to-sky-600 bg-clip-text text-transparent">with Fido</span>
+                    <span className="bg-gradient-to-r from-blue-600 to-sky-600 bg-clip-text text-transparent">Meet Your New Co-Pilot</span>
                   </h1>
                   
                   <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
-                    Unlock SBA Loans • Build Strong Credit • Plan Smarter
+                    Get funding. Build credit. Plan smarter. And grow with AI that works alongside you.
                   </p>
                   
                   <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <Button size="lg" className="bg-gradient-to-r from-blue-500 to-sky-500 hover:from-blue-600 hover:to-sky-600 text-white px-10 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200" onClick={handleTryFido}>Try our SBA Copilot (beta)</Button>
+                    <Button size="lg" className="bg-gradient-to-r from-blue-500 to-sky-500 hover:from-blue-600 hover:to-sky-600 text-white px-10 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200" onClick={handleTryFido}>Try Fido's SBA Co-Pilot</Button>
                     <p className="text-gray-500 text-sm font-light">
-                      No credit card required
+                      No credit card. Just momentum.
                     </p>
                   </div>
+                </div>
+              </div>
+            </div>
+
+            {/* How It Works Section */}
+            <div className="py-16 mb-8">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                  How Fido Helps, Step by Step
+                </h2>
+                <p className="text-lg text-gray-600 max-w-2xl mx-auto font-light">
+                  Your journey from idea to funding, simplified
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-2xl font-bold text-blue-600">1</span>
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-800 mb-3">Answer a few questions</h3>
+                  <p className="text-gray-600 font-light">Tell Fido about your business goals and current situation</p>
+                </div>
+
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-2xl font-bold text-emerald-600">2</span>
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-800 mb-3">Fido checks eligibility & builds your plan</h3>
+                  <p className="text-gray-600 font-light">Get a personalized roadmap with loan options and requirements</p>
+                </div>
+
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-100 to-purple-200 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-2xl font-bold text-purple-600">3</span>
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-800 mb-3">Apply with confidence</h3>
+                  <p className="text-gray-600 font-light">Fido supports you along the way with smart guidance</p>
                 </div>
               </div>
             </div>
@@ -60,7 +98,7 @@ const Index = () => {
             <div className="py-24 bg-white/60 backdrop-blur-sm rounded-2xl mb-8 border border-blue-100/50">
               <div className="text-center mb-20">
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-                  Everything You Need to Grow
+                  You Don't Have to Build Alone
                 </h2>
                 <p className="text-xl text-gray-600 max-w-2xl mx-auto font-light leading-relaxed">
                   Fido combines AI intelligence with financial expertise to accelerate your business success
@@ -74,10 +112,10 @@ const Index = () => {
                       <Laptop className="w-7 h-7 text-blue-600" />
                     </div>
                     <h3 className="text-2xl font-semibold text-gray-800 mb-4">
-                      SBA Loan Applications, Simplified
+                      Get Funded Without the Frustration
                     </h3>
                     <p className="text-gray-600 text-lg leading-relaxed font-light">
-                      Fido automates paperwork, checks your eligibility, and increases approval odds — without the stress.
+                      Fido automates SBA loan paperwork, checks eligibility, and boosts your chances—stop guessing and start growing.
                     </p>
                   </CardContent>
                 </Card>
@@ -88,10 +126,10 @@ const Index = () => {
                       <BadgeDollarSign className="w-7 h-7 text-emerald-600" />
                     </div>
                     <h3 className="text-2xl font-semibold text-gray-800 mb-4">
-                      Business Credit Intelligence
+                      Build Credit That Opens Doors
                     </h3>
                     <p className="text-gray-600 text-lg leading-relaxed font-light">
-                      Track, build, and optimize your business credit with personalized coaching and step-by-step guidance.
+                      Track and optimize your business credit with step-by-step guidance to qualify for your needs.
                     </p>
                   </CardContent>
                 </Card>
@@ -102,10 +140,10 @@ const Index = () => {
                       <LineChart className="w-7 h-7 text-purple-600" />
                     </div>
                     <h3 className="text-2xl font-semibold text-gray-800 mb-4">
-                      Auto-Generated Business Plans
+                      Turn Your Goals Into a Fundable Plan
                     </h3>
                     <p className="text-gray-600 text-lg leading-relaxed font-light">
-                      Tell Fido your goals. It builds dynamic, fundable plans perfectly aligned with lender criteria.
+                      Fido turns your vision into a lender-ready business plan designed for results.
                     </p>
                   </CardContent>
                 </Card>
@@ -116,10 +154,10 @@ const Index = () => {
                       <Calendar className="w-7 h-7 text-sky-600" />
                     </div>
                     <h3 className="text-2xl font-semibold text-gray-800 mb-4">
-                      Built with Agentic Intelligence
+                      Not Just AI. Agentic Intelligence.
                     </h3>
                     <p className="text-gray-600 text-lg leading-relaxed font-light">
-                      Fido isn't just a chatbot — it's a thinking agent working on your behalf 24/7.
+                      Fido is more than a chatbot—it acts on your behalf, making smart decisions for you 24/7.
                     </p>
                   </CardContent>
                 </Card>
@@ -130,10 +168,10 @@ const Index = () => {
             <div className="py-24 bg-gradient-to-t from-blue-50/50 to-transparent rounded-2xl">
               <div className="max-w-4xl mx-auto text-center">
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-                  Ready to Transform Your Business?
+                  You Don't Have to Build Alone.
                 </h2>
                 <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
-                  Start building smarter with AI-powered business tools designed for growth
+                  Start your business journey with a smarter, stronger co-pilot. No credit card. Just momentum.
                 </p>
                 <Button size="lg" className="bg-gradient-to-r from-blue-500 to-sky-500 hover:from-blue-600 hover:to-sky-600 text-white px-12 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200" onClick={handleTryFido}>
                   Get Started Free

@@ -27,15 +27,6 @@ const Index = () => {
                     Powered by Agentic Intelligence
                   </div>
                   
-                  {/* Fido Logo Integration */}
-                  <div className="flex items-center justify-center mb-8">
-                    <img 
-                      src="/lovable-uploads/d978fd36-a7f7-4b1d-88bf-5694c664e470.png" 
-                      alt="Fido" 
-                      className="h-20 w-auto"
-                    />
-                  </div>
-                  
                   <h1 className="text-5xl md:text-7xl font-bold text-gray-800 mb-6 leading-tight">
                     For Business Owners Who Do It All
                     <br />
@@ -187,13 +178,6 @@ const Index = () => {
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-blue-100/50 p-8 md:p-12">
               <div className="max-w-4xl mx-auto py-12">
                 <div className="text-center mb-16">
-                  <div className="flex items-center justify-center mb-6">
-                    <img 
-                      src="/lovable-uploads/d978fd36-a7f7-4b1d-88bf-5694c664e470.png" 
-                      alt="Fido" 
-                      className="h-16 w-auto opacity-90"
-                    />
-                  </div>
                   <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-4">Our Vision</h1>
                   <p className="text-xl text-gray-600 font-light">A Trusted Partner for the Next Generation of Entrepreneurs</p>
                 </div>
@@ -284,13 +268,6 @@ const Index = () => {
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-blue-100/50 p-8 md:p-12">
               <div className="max-w-4xl mx-auto py-12">
                 <div className="text-center mb-16">
-                  <div className="flex items-center justify-center mb-6">
-                    <img 
-                      src="/lovable-uploads/d978fd36-a7f7-4b1d-88bf-5694c664e470.png" 
-                      alt="Fido" 
-                      className="h-16 w-auto opacity-90"
-                    />
-                  </div>
                   <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-4">Contact Us</h1>
                   <p className="text-xl text-gray-600 font-light">Get in touch with our team</p>
                 </div>

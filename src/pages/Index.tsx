@@ -6,6 +6,7 @@ import fidoLogo from "@/assets/fido-logo.png";
 import { useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useAnalytics } from "@/hooks/useAnalytics";
+import { SocialShare } from "@/components/SocialShare";
 
 const Index = () => {
   const { trackEvent } = useAnalytics();
@@ -274,6 +275,13 @@ const Index = () => {
                 <p className="mt-6 text-sm text-gray-500 font-light">
                   Your ambition + our agentic intelligence = unstoppable growth
                 </p>
+              </div>
+            </div>
+
+            {/* Social Share Section */}
+            <div className="py-16">
+              <div className="max-w-4xl mx-auto">
+                <SocialShare />
               </div>
             </div>
           </TabsContent>

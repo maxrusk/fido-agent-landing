@@ -21,7 +21,7 @@ export const SocialShare = ({
 
   const shareData = {
     linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`,
-    twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(`${title} - ${description}`)}&url=${encodeURIComponent(url)}`,
+    x: `https://twitter.com/intent/tweet?text=${encodeURIComponent(`${title} - ${description}`)}&url=${encodeURIComponent(url)}`,
     facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`
   };
 
@@ -64,9 +64,9 @@ export const SocialShare = ({
         <Button
           variant="outline"
           size="sm"
-          onClick={() => handleShare('twitter', shareData.twitter)}
+          onClick={() => handleShare('x', shareData.x)}
           className="p-2"
-          aria-label="Share on Twitter"
+          aria-label="Share on X"
         >
           <Twitter className="w-4 h-4" />
         </Button>
@@ -103,11 +103,11 @@ export const SocialShare = ({
         </Button>
         
         <Button
-          onClick={() => handleShare('twitter', shareData.twitter)}
-          className="bg-[#1DA1F2] hover:bg-[#0d8bd9] text-white flex items-center gap-2"
+          onClick={() => handleShare('x', shareData.x)}
+          className="bg-[#000000] hover:bg-[#333333] text-white flex items-center gap-2"
         >
           <Twitter className="w-4 h-4" />
-          Twitter
+          X
         </Button>
         
         <Button

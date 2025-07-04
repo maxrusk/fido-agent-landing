@@ -1,21 +1,14 @@
-"use client";
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Calendar, Laptop, LineChart, BadgeDollarSign, ExternalLink, Mail, Linkedin, MessageCircle, CheckCircle, ArrowRight } from "lucide-react";
 import fidoLogo from "@/assets/fido-logo.png";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const Index = () => {
-  const [isDark, setIsDark] = useState(false);
   const [showWaitlist, setShowWaitlist] = useState(false);
   const [waitlist, setWaitlist] = useState({ name: "", email: "" });
   const [joined, setJoined] = useState(false);
-
-  useEffect(() => {
-    document.documentElement.classList.toggle("dark", isDark);
-  }, [isDark]);
 
   const handleTryFido = () => {
     window.open('https://chatgpt.com/g/g-6849ed2b9ea48191a53c4f016cf0b29c-sba-loan-guidance-agent', '_blank');
@@ -29,20 +22,14 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-rose-50 to-pink-50 dark:from-gray-900 dark:via-gray-950 dark:to-black text-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-rose-50 to-pink-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
         <div className="flex justify-between items-center mb-8">
           {/* Logo */}
           <div>
             <img src={fidoLogo} alt="Fido Logo" className="h-12 w-auto" />
           </div>
-          <div className="flex gap-4">
-            <button
-              onClick={() => setIsDark(!isDark)}
-              className="text-sm font-medium px-4 py-2 rounded-full bg-gradient-to-r from-indigo-600 to-rose-600 text-white dark:from-gray-700 dark:to-gray-800 shadow hover:opacity-90 transition"
-            >
-              {isDark ? "Switch to Light" : "Switch to Dark"} Mode
-            </button>
+          <div>
             <button
               onClick={() => setShowWaitlist(!showWaitlist)}
               className="text-sm font-medium px-4 py-2 rounded-full bg-gradient-to-r from-rose-500 to-indigo-500 text-white shadow hover:opacity-90 transition"
@@ -53,30 +40,30 @@ const Index = () => {
         </div>
 
         {showWaitlist && (
-          <div className="max-w-xl mx-auto bg-white dark:bg-gray-800 rounded-xl shadow p-6 mb-8">
-            <h2 className="text-2xl font-bold mb-4 text-gray-800 dark:text-white">Join the Waitlist</h2>
+          <div className="max-w-xl mx-auto bg-white rounded-xl shadow p-6 mb-8">
+            <h2 className="text-2xl font-bold mb-4 text-gray-800">Join the Waitlist</h2>
             {joined ? (
-              <p className="text-green-600 dark:text-green-400">Thanks for joining! We'll be in touch soon.</p>
+              <p className="text-green-600">Thanks for joining! We'll be in touch soon.</p>
             ) : (
               <form onSubmit={handleWaitlistSubmit} className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Name</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Name</label>
                   <input
                     type="text"
                     value={waitlist.name}
                     onChange={(e) => setWaitlist({ ...waitlist, name: e.target.value })}
                     required
-                    className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
+                    className="w-full px-4 py-2 rounded-md border border-gray-300 bg-white text-gray-900"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
                   <input
                     type="email"
                     value={waitlist.email}
                     onChange={(e) => setWaitlist({ ...waitlist, email: e.target.value })}
                     required
-                    className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
+                    className="w-full px-4 py-2 rounded-md border border-gray-300 bg-white text-gray-900"
                   />
                 </div>
                 <Button type="submit" className="w-full bg-gradient-to-r from-indigo-600 to-rose-600 hover:from-indigo-700 hover:to-rose-700 text-white">
@@ -89,9 +76,9 @@ const Index = () => {
         
         <Tabs defaultValue="home" className="w-full">
           <TabsList className="grid w-full grid-cols-3 max-w-lg mx-auto mb-8 bg-transparent border-none p-0 gap-4">
-            <TabsTrigger value="home" className="data-[state=active]:bg-white dark:data-[state=active]:bg-gray-800 data-[state=active]:text-black dark:data-[state=active]:text-white data-[state=active]:border-2 data-[state=active]:border-black dark:data-[state=active]:border-white text-gray-500 dark:text-gray-300 bg-transparent border-2 border-transparent text-base font-bold rounded-xl px-8 py-3 hover:bg-gray-50 dark:hover:bg-gray-800">Home</TabsTrigger>
-            <TabsTrigger value="vision" className="data-[state=active]:bg-white dark:data-[state=active]:bg-gray-800 data-[state=active]:text-black dark:data-[state=active]:text-white data-[state=active]:border-2 data-[state=active]:border-black dark:data-[state=active]:border-white text-gray-500 dark:text-gray-300 bg-transparent border-2 border-transparent font-bold rounded-xl px-8 py-3 hover:bg-gray-50 dark:hover:bg-gray-800">Our Vision</TabsTrigger>
-            <TabsTrigger value="contact" className="data-[state=active]:bg-white dark:data-[state=active]:bg-gray-800 data-[state=active]:text-black dark:data-[state=active]:text-white data-[state=active]:border-2 data-[state=active]:border-black dark:data-[state=active]:border-white text-gray-500 dark:text-gray-300 bg-transparent border-2 border-transparent font-bold rounded-xl px-8 py-3 hover:bg-gray-50 dark:hover:bg-gray-800">Contact</TabsTrigger>
+            <TabsTrigger value="home" className="data-[state=active]:bg-white data-[state=active]:text-black data-[state=active]:border-2 data-[state=active]:border-black text-gray-500 bg-transparent border-2 border-transparent text-base font-bold rounded-xl px-8 py-3 hover:bg-gray-50">Home</TabsTrigger>
+            <TabsTrigger value="vision" className="data-[state=active]:bg-white data-[state=active]:text-black data-[state=active]:border-2 data-[state=active]:border-black text-gray-500 bg-transparent border-2 border-transparent font-bold rounded-xl px-8 py-3 hover:bg-gray-50">Our Vision</TabsTrigger>
+            <TabsTrigger value="contact" className="data-[state=active]:bg-white data-[state=active]:text-black data-[state=active]:border-2 data-[state=active]:border-black text-gray-500 bg-transparent border-2 border-transparent font-bold rounded-xl px-8 py-3 hover:bg-gray-50">Contact</TabsTrigger>
           </TabsList>
           
           <TabsContent value="home">
@@ -104,19 +91,19 @@ const Index = () => {
                     Powered by Agentic Intelligence
                   </div>
                   
-                  <h1 className="text-5xl md:text-7xl font-bold text-gray-800 dark:text-white mb-6 leading-tight">
+                  <h1 className="text-5xl md:text-7xl font-bold text-gray-800 mb-6 leading-tight">
                     For Business Owners Who Do It All
                     <br />
                     <span className="bg-gradient-to-r from-indigo-600 to-rose-600 bg-clip-text text-transparent">Meet Your New Co-Pilot</span>
                   </h1>
                   
-                  <p className="text-xl md:text-2xl text-gray-600 dark:text-black mb-12 max-w-3xl mx-auto leading-relaxed font-light">
+                  <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
                     Get funding. Build credit. Plan smarter. And grow with AI that works alongside you.
                   </p>
                   
                   <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                     <Button size="lg" className="bg-gradient-to-r from-indigo-600 to-rose-600 hover:from-indigo-700 hover:to-rose-700 text-white px-10 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200" onClick={handleTryFido}>Try Fido's SBA Co-Pilot</Button>
-                    <p className="text-gray-500 dark:text-black text-sm font-light">
+                    <p className="text-gray-500 text-sm font-light">
                       No credit card. Just momentum.
                     </p>
                   </div>
@@ -127,10 +114,10 @@ const Index = () => {
             {/* How It Works Section */}
             <div className="py-16 mb-8">
               <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
                   How Fido Helps, Step by Step
                 </h2>
-                <p className="text-lg text-gray-600 dark:text-black max-w-2xl mx-auto font-light">
+                <p className="text-lg text-gray-600 max-w-2xl mx-auto font-light">
                   Your journey from idea to funding, simplified
                 </p>
               </div>
@@ -140,24 +127,24 @@ const Index = () => {
                   <div className="w-16 h-16 bg-gradient-to-br from-indigo-100 to-rose-200 rounded-full flex items-center justify-center mx-auto mb-4">
                     <span className="text-2xl font-bold text-indigo-700">1</span>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-3">Answer a few questions</h3>
-                  <p className="text-gray-600 dark:text-black font-light">Tell Fido about your business goals and current situation</p>
+                  <h3 className="text-xl font-semibold text-gray-800 mb-3">Answer a few questions</h3>
+                  <p className="text-gray-600 font-light">Tell Fido about your business goals and current situation</p>
                 </div>
 
                 <div className="text-center">
                   <div className="w-16 h-16 bg-gradient-to-br from-indigo-100 to-rose-200 rounded-full flex items-center justify-center mx-auto mb-4">
                     <span className="text-2xl font-bold text-indigo-700">2</span>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-3">Fido checks eligibility & builds your plan</h3>
-                  <p className="text-gray-600 dark:text-black font-light">Get a personalized roadmap with loan options and requirements</p>
+                  <h3 className="text-xl font-semibold text-gray-800 mb-3">Fido checks eligibility & builds your plan</h3>
+                  <p className="text-gray-600 font-light">Get a personalized roadmap with loan options and requirements</p>
                 </div>
 
                 <div className="text-center">
                   <div className="w-16 h-16 bg-gradient-to-br from-indigo-100 to-rose-200 rounded-full flex items-center justify-center mx-auto mb-4">
                     <span className="text-2xl font-bold text-indigo-700">3</span>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-3">Apply with confidence</h3>
-                  <p className="text-gray-600 dark:text-black font-light">Fido supports you along the way with smart guidance</p>
+                  <h3 className="text-xl font-semibold text-gray-800 mb-3">Apply with confidence</h3>
+                  <p className="text-gray-600 font-light">Fido supports you along the way with smart guidance</p>
                 </div>
               </div>
             </div>
@@ -165,10 +152,10 @@ const Index = () => {
             {/* Features Section */}
             <div className="py-24 bg-white/60 backdrop-blur-sm rounded-2xl mb-8 border border-blue-100/50">
               <div className="text-center mb-20">
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-6">
+                <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
                   You Don't Have to Build Alone
                 </h2>
-                <p className="text-xl text-gray-600 dark:text-black max-w-2xl mx-auto font-light leading-relaxed">
+                <p className="text-xl text-gray-600 max-w-2xl mx-auto font-light leading-relaxed">
                   Fido combines AI intelligence with financial expertise to accelerate your business success
                 </p>
               </div>
@@ -179,10 +166,10 @@ const Index = () => {
                     <div className="w-14 h-14 bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                       <Laptop className="w-7 h-7 text-blue-600" />
                     </div>
-                    <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">
+                    <h3 className="text-2xl font-semibold text-gray-800 mb-4">
                       Get Funded Without the Frustration
                     </h3>
-                    <p className="text-gray-600 dark:text-black text-lg leading-relaxed font-light">
+                    <p className="text-gray-600 text-lg leading-relaxed font-light">
                       Fido automates SBA loan paperwork, checks eligibility, and boosts your chances—stop guessing and start growing.
                     </p>
                   </CardContent>
@@ -193,10 +180,10 @@ const Index = () => {
                     <div className="w-14 h-14 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                       <BadgeDollarSign className="w-7 h-7 text-emerald-600" />
                     </div>
-                    <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">
+                    <h3 className="text-2xl font-semibold text-gray-800 mb-4">
                       Build Credit That Opens Doors
                     </h3>
-                    <p className="text-gray-600 dark:text-black text-lg leading-relaxed font-light">
+                    <p className="text-gray-600 text-lg leading-relaxed font-light">
                       Track and optimize your business credit with step-by-step guidance to qualify for your needs.
                     </p>
                   </CardContent>
@@ -207,10 +194,10 @@ const Index = () => {
                     <div className="w-14 h-14 bg-gradient-to-br from-purple-100 to-purple-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                       <LineChart className="w-7 h-7 text-purple-600" />
                     </div>
-                    <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">
+                    <h3 className="text-2xl font-semibold text-gray-800 mb-4">
                       Turn Your Goals Into a Fundable Plan
                     </h3>
-                    <p className="text-gray-600 dark:text-black text-lg leading-relaxed font-light">
+                    <p className="text-gray-600 text-lg leading-relaxed font-light">
                       Fido turns your vision into a lender-ready business plan designed for results.
                     </p>
                   </CardContent>
@@ -221,10 +208,10 @@ const Index = () => {
                     <div className="w-14 h-14 bg-gradient-to-br from-sky-100 to-sky-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                       <Calendar className="w-7 h-7 text-sky-600" />
                     </div>
-                    <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">
+                    <h3 className="text-2xl font-semibold text-gray-800 mb-4">
                       Not Just AI. Agentic Intelligence.
                     </h3>
-                    <p className="text-gray-600 dark:text-black text-lg leading-relaxed font-light">
+                    <p className="text-gray-600 text-lg leading-relaxed font-light">
                       Fido is more than a chatbot—it acts on your behalf, making smart decisions for you 24/7.
                     </p>
                   </CardContent>
@@ -235,16 +222,16 @@ const Index = () => {
             {/* CTA Section */}
             <div className="py-24 bg-gradient-to-t from-blue-50/50 to-transparent rounded-2xl">
               <div className="max-w-4xl mx-auto text-center">
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-6">
+                <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
                   You Don't Have to Build Alone.
                 </h2>
-                <p className="text-xl text-gray-600 dark:text-black mb-12 max-w-2xl mx-auto font-light leading-relaxed">
+                <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
                   Start your business journey with a smarter, stronger co-pilot. No credit card. Just momentum.
                 </p>
                 <Button size="lg" className="bg-gradient-to-r from-indigo-600 to-rose-600 hover:from-indigo-700 hover:to-rose-700 text-white px-12 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200" onClick={handleTryFido}>
                   Get Started Free
                 </Button>
-                <p className="mt-6 text-sm text-gray-500 dark:text-black font-light">
+                <p className="mt-6 text-sm text-gray-500 font-light">
                   Your ambition + our agentic intelligence = unstoppable growth
                 </p>
               </div>
@@ -255,11 +242,11 @@ const Index = () => {
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-blue-100/50 p-8 md:p-12">
               <div className="max-w-4xl mx-auto py-12">
                 <div className="text-center mb-16">
-                  <h1 className="text-5xl md:text-6xl font-bold text-gray-800 dark:text-white mb-4">Our Vision</h1>
-                  <p className="text-xl text-gray-600 dark:text-gray-300 font-light">A Trusted Partner for the Next Generation of Entrepreneurs</p>
+                  <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-4">Our Vision</h1>
+                  <p className="text-xl text-gray-600 font-light">A Trusted Partner for the Next Generation of Entrepreneurs</p>
                 </div>
 
-                <div className="prose prose-lg max-w-none text-gray-700 dark:text-gray-300 space-y-8">
+                <div className="prose prose-lg max-w-none text-gray-700 space-y-8">
                   <div className="text-xl leading-relaxed font-light">
                     <p className="mb-6">Every business starts with a goal.</p>
                     <p className="mb-2">Sometimes it's to earn more for your family.</p>
@@ -271,7 +258,7 @@ const Index = () => {
                   </div>
 
                   <div>
-                    <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-6">Built on Trust, Designed to Help</h2>
+                    <h2 className="text-3xl font-bold text-gray-800 mb-6">Built on Trust, Designed to Help</h2>
                     <p className="text-xl mb-6 font-light">Fido is your business co-pilot.  A reliable, trustworthy companion and intelligent system that helps you get more while focusing on what matters.</p>
                     <p className="text-lg mb-4 font-light">From day one, it works alongside you to:</p>
                     <ul className="text-lg space-y-2 mb-6 pl-6 font-light">
@@ -284,7 +271,7 @@ const Index = () => {
                   </div>
 
                   <div>
-                    <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-6">Agentic Intelligence, Applied to Your Business</h2>
+                    <h2 className="text-3xl font-bold text-gray-800 mb-6">Agentic Intelligence, Applied to Your Business</h2>
                     <p className="text-xl mb-4 font-light">Fido is powered by a new class of AI, what we call agentic intelligence.</p>
                     <p className="text-lg mb-6 font-light">It is not just another chatbot or template tool. It is built to act on your behalf.</p>
                     <p className="text-lg mb-4 font-light">This means:</p>
@@ -297,7 +284,7 @@ const Index = () => {
                   </div>
 
                   <div>
-                    <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-6">For Business Owners Who Do It All</h2>
+                    <h2 className="text-3xl font-bold text-gray-800 mb-6">For Business Owners Who Do It All</h2>
                     <p className="text-lg mb-4 font-light">We didn't build Fido for tech companies or corporate teams.</p>
                     <p className="text-lg mb-4 font-light">We built it for people doing everything themselves:</p>
                     <ul className="text-lg space-y-2 mb-6 pl-6 font-light">
@@ -310,7 +297,7 @@ const Index = () => {
                   </div>
 
                   <div>
-                    <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-6">What We Stand For</h2>
+                    <h2 className="text-3xl font-bold text-gray-800 mb-6">What We Stand For</h2>
                     <p className="text-xl mb-6 font-medium">Helping small business owners succeed, faster, easier, and more confidently, through intelligent, trustworthy technology.</p>
                     <p className="text-lg mb-2 font-light">We believe technology should work like a partner, not a puzzle.</p>
                     <p className="text-lg mb-2 font-light">That automation should feel human, not robotic.</p>
@@ -319,7 +306,7 @@ const Index = () => {
                   </div>
 
                   <div>
-                    <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-6">Moving Forward, Together</h2>
+                    <h2 className="text-3xl font-bold text-gray-800 mb-6">Moving Forward, Together</h2>
                     <p className="text-lg mb-6 font-light">We are building Fido for the long haul because we know your journey doesn't end at launch.</p>
                     <p className="text-lg mb-2 font-light">It evolves.</p>
                     <p className="text-lg mb-2 font-light">It hits friction.</p>
@@ -330,7 +317,7 @@ const Index = () => {
                   </div>
 
                   <div className="text-center py-12 bg-gradient-to-t from-blue-50/50 to-transparent rounded-2xl">
-                    <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-6">Try Fido Copilot For Free</h3>
+                    <h3 className="text-2xl font-bold text-gray-800 mb-6">Try Fido Copilot For Free</h3>
                     <Button size="lg" className="bg-gradient-to-r from-indigo-600 to-rose-600 hover:from-indigo-700 hover:to-rose-700 text-white px-10 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 inline-flex items-center gap-2" onClick={handleTryFido}>
                       Try Fido For Free
                       <ExternalLink className="w-4 h-4" />
@@ -345,14 +332,14 @@ const Index = () => {
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-blue-100/50 p-8 md:p-12">
               <div className="max-w-4xl mx-auto py-12">
                 <div className="text-center mb-16">
-                  <h1 className="text-5xl md:text-6xl font-bold text-gray-800 dark:text-white mb-4">Contact Us</h1>
-                  <p className="text-xl text-gray-600 dark:text-gray-300 font-light">Get in touch with our team</p>
+                  <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-4">Contact Us</h1>
+                  <p className="text-xl text-gray-600 font-light">Get in touch with our team</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                   {/* Contact Information */}
                   <div className="space-y-8">
-                    <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-6">Get In Touch</h2>
+                    <h2 className="text-3xl font-bold text-gray-800 mb-6">Get In Touch</h2>
                     
                     <div className="space-y-6">
                       <div className="flex items-center space-x-4 group hover:bg-blue-50/50 rounded-lg p-3 transition-colors duration-200">
@@ -360,8 +347,8 @@ const Index = () => {
                           <Mail className="w-6 h-6 text-blue-600" />
                         </div>
                         <div>
-                          <h3 className="text-lg font-semibold text-gray-800 dark:text-white">Email</h3>
-                          <p className="text-gray-600 dark:text-gray-300">founders@fidofinancial.ai</p>
+                          <h3 className="text-lg font-semibold text-gray-800">Email</h3>
+                          <p className="text-gray-600">founders@fidofinancial.ai</p>
                         </div>
                       </div>
 
@@ -370,8 +357,8 @@ const Index = () => {
                           <Linkedin className="w-6 h-6 text-emerald-600" />
                         </div>
                         <div>
-                          <h3 className="text-lg font-semibold text-gray-800 dark:text-white">LinkedIn</h3>
-                          <p className="text-gray-600 dark:text-gray-300">Fido Financial</p>
+                          <h3 className="text-lg font-semibold text-gray-800">LinkedIn</h3>
+                          <p className="text-gray-600">Fido Financial</p>
                         </div>
                       </div>
 
@@ -380,8 +367,8 @@ const Index = () => {
                           <MessageCircle className="w-6 h-6 text-purple-600" />
                         </div>
                         <div>
-                          <h3 className="text-lg font-semibold text-gray-800 dark:text-white">Reddit</h3>
-                          <p className="text-gray-600 dark:text-gray-300">u/fidofinancial</p>
+                          <h3 className="text-lg font-semibold text-gray-800">Reddit</h3>
+                          <p className="text-gray-600">u/fidofinancial</p>
                         </div>
                       </div>
                     </div>
@@ -389,24 +376,24 @@ const Index = () => {
 
                   {/* Contact Form */}
                   <div className="bg-white/60 backdrop-blur-sm rounded-xl p-8 border border-blue-100/50">
-                    <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-6">Send us a message</h2>
+                    <h2 className="text-2xl font-bold text-gray-800 mb-6">Send us a message</h2>
                     <form className="space-y-6">
                       <div>
-                        <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Name</label>
+                        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Name</label>
                         <input type="text" id="name" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200" placeholder="Your name" />
                       </div>
 
                       <div>
-                        <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email</label>
+                        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">Email</label>
                         <input type="email" id="email" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200" placeholder="your@email.com" />
                       </div>
 
                       <div>
-                        <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Message</label>
+                        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">Message</label>
                         <textarea id="message" rows={4} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none transition-all duration-200" placeholder="Tell us how we can help you..." />
                       </div>
 
-                      <Button type="submit" className="w-full bg-gradient-to-r from-blue-500 to-sky-500 hover:from-blue-600 hover:to-sky-600 text-white py-3 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200">
+                      <Button type="submit" className="w-full bg-gradient-to-r from-indigo-600 to-rose-600 hover:from-indigo-700 hover:to-rose-700 text-white py-3 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200">
                         Send Message
                       </Button>
                     </form>
@@ -414,7 +401,7 @@ const Index = () => {
                 </div>
 
                 <div className="text-center py-12 bg-gradient-to-t from-blue-50/50 to-transparent rounded-2xl mt-12">
-                  <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-6">Ready to Get Started?</h3>
+                  <h3 className="text-2xl font-bold text-gray-800 mb-6">Ready to Get Started?</h3>
                   <Button size="lg" className="bg-gradient-to-r from-indigo-600 to-rose-600 hover:from-indigo-700 hover:to-rose-700 text-white px-10 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 inline-flex items-center gap-2" onClick={handleTryFido}>
                     Try Fido For Free
                     <ExternalLink className="w-4 h-4" />

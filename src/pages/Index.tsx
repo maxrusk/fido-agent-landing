@@ -164,7 +164,7 @@ const Index = () => {
                 <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
                   Start your business journey with a smarter, stronger co-pilot. No credit card. Just momentum.
                 </p>
-                <Button size="lg" className="bg-gradient-to-r from-blue-500 to-sky-500 hover:from-blue-600 hover:to-sky-600 text-white px-12 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200" onClick={handleTryFido}>
+                <Button size="lg" className="bg-gradient-to-r from-indigo-600 to-rose-600 hover:from-indigo-700 hover:to-rose-700 text-white px-12 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200" onClick={handleTryFido}>
                   Get Started Free
                 </Button>
                 <p className="mt-6 text-sm text-gray-500 font-light">
@@ -254,7 +254,7 @@ const Index = () => {
 
                   <div className="text-center py-12 bg-gradient-to-t from-blue-50/50 to-transparent rounded-2xl">
                     <h3 className="text-2xl font-bold text-gray-800 mb-6">Try Fido Copilot For Free</h3>
-                    <Button size="lg" className="bg-gradient-to-r from-blue-500 to-sky-500 hover:from-blue-600 hover:to-sky-600 text-white px-10 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 inline-flex items-center gap-2" onClick={handleTryFido}>
+                    <Button size="lg" className="bg-gradient-to-r from-indigo-600 to-rose-600 hover:from-indigo-700 hover:to-rose-700 text-white px-10 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 inline-flex items-center gap-2" onClick={handleTryFido}>
                       Try Fido For Free
                       <ExternalLink className="w-4 h-4" />
                     </Button>
@@ -338,7 +338,7 @@ const Index = () => {
 
                 <div className="text-center py-12 bg-gradient-to-t from-blue-50/50 to-transparent rounded-2xl mt-12">
                   <h3 className="text-2xl font-bold text-gray-800 mb-6">Ready to Get Started?</h3>
-                  <Button size="lg" className="bg-gradient-to-r from-blue-500 to-sky-500 hover:from-blue-600 hover:to-sky-600 text-white px-10 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 inline-flex items-center gap-2" onClick={handleTryFido}>
+                  <Button size="lg" className="bg-gradient-to-r from-indigo-600 to-rose-600 hover:from-indigo-700 hover:to-rose-700 text-white px-10 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 inline-flex items-center gap-2" onClick={handleTryFido}>
                     Try Fido For Free
                     <ExternalLink className="w-4 h-4" />
                   </Button>

@@ -11,8 +11,8 @@ const Index = () => {
   return <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-rose-50 to-pink-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
         {/* Logo */}
-        <div className="mb-8">
-          <img src={fidoLogo} alt="Fido Logo" className="h-12 w-auto" />
+        <div className="mb-12 flex justify-center">
+          <img src={fidoLogo} alt="Fido Logo" className="h-20 w-auto shadow-lg rounded-lg bg-white/90 backdrop-blur-sm p-4 border border-indigo-100" />
         </div>
         
         <Tabs defaultValue="home" className="w-full">

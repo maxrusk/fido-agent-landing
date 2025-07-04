@@ -104,7 +104,7 @@ const Index = () => {
                     Powered by Agentic Intelligence
                   </div>
                   
-                  <h1 className="text-5xl md:text-7xl font-bold text-gray-800 mb-6 leading-tight">
+                  <h1 className="text-5xl md:text-7xl font-bold text-gray-800 dark:text-white mb-6 leading-tight">
                     For Business Owners Who Do It All
                     <br />
                     <span className="bg-gradient-to-r from-indigo-600 to-rose-600 bg-clip-text text-transparent">Meet Your New Co-Pilot</span>
@@ -127,7 +127,7 @@ const Index = () => {
             {/* How It Works Section */}
             <div className="py-16 mb-8">
               <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">
                   How Fido Helps, Step by Step
                 </h2>
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto font-light">
@@ -140,7 +140,7 @@ const Index = () => {
                   <div className="w-16 h-16 bg-gradient-to-br from-indigo-100 to-rose-200 rounded-full flex items-center justify-center mx-auto mb-4">
                     <span className="text-2xl font-bold text-indigo-700">1</span>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-800 mb-3">Answer a few questions</h3>
+                  <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-3">Answer a few questions</h3>
                   <p className="text-gray-600 font-light">Tell Fido about your business goals and current situation</p>
                 </div>
 
@@ -148,7 +148,7 @@ const Index = () => {
                   <div className="w-16 h-16 bg-gradient-to-br from-indigo-100 to-rose-200 rounded-full flex items-center justify-center mx-auto mb-4">
                     <span className="text-2xl font-bold text-indigo-700">2</span>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-800 mb-3">Fido checks eligibility & builds your plan</h3>
+                  <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-3">Fido checks eligibility & builds your plan</h3>
                   <p className="text-gray-600 font-light">Get a personalized roadmap with loan options and requirements</p>
                 </div>
 
@@ -156,7 +156,7 @@ const Index = () => {
                   <div className="w-16 h-16 bg-gradient-to-br from-indigo-100 to-rose-200 rounded-full flex items-center justify-center mx-auto mb-4">
                     <span className="text-2xl font-bold text-indigo-700">3</span>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-800 mb-3">Apply with confidence</h3>
+                  <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-3">Apply with confidence</h3>
                   <p className="text-gray-600 font-light">Fido supports you along the way with smart guidance</p>
                 </div>
               </div>
@@ -165,7 +165,7 @@ const Index = () => {
             {/* Features Section */}
             <div className="py-24 bg-white/60 backdrop-blur-sm rounded-2xl mb-8 border border-blue-100/50">
               <div className="text-center mb-20">
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+                <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-6">
                   You Don't Have to Build Alone
                 </h2>
                 <p className="text-xl text-gray-600 max-w-2xl mx-auto font-light leading-relaxed">
@@ -179,7 +179,7 @@ const Index = () => {
                     <div className="w-14 h-14 bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                       <Laptop className="w-7 h-7 text-blue-600" />
                     </div>
-                    <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+                    <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">
                       Get Funded Without the Frustration
                     </h3>
                     <p className="text-gray-600 text-lg leading-relaxed font-light">
@@ -193,7 +193,7 @@ const Index = () => {
                     <div className="w-14 h-14 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                       <BadgeDollarSign className="w-7 h-7 text-emerald-600" />
                     </div>
-                    <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+                    <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">
                       Build Credit That Opens Doors
                     </h3>
                     <p className="text-gray-600 text-lg leading-relaxed font-light">
@@ -207,7 +207,7 @@ const Index = () => {
                     <div className="w-14 h-14 bg-gradient-to-br from-purple-100 to-purple-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                       <LineChart className="w-7 h-7 text-purple-600" />
                     </div>
-                    <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+                    <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">
                       Turn Your Goals Into a Fundable Plan
                     </h3>
                     <p className="text-gray-600 text-lg leading-relaxed font-light">
@@ -221,7 +221,7 @@ const Index = () => {
                     <div className="w-14 h-14 bg-gradient-to-br from-sky-100 to-sky-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                       <Calendar className="w-7 h-7 text-sky-600" />
                     </div>
-                    <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+                    <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">
                       Not Just AI. Agentic Intelligence.
                     </h3>
                     <p className="text-gray-600 text-lg leading-relaxed font-light">
@@ -235,7 +235,7 @@ const Index = () => {
             {/* CTA Section */}
             <div className="py-24 bg-gradient-to-t from-blue-50/50 to-transparent rounded-2xl">
               <div className="max-w-4xl mx-auto text-center">
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+                <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-6">
                   You Don't Have to Build Alone.
                 </h2>
                 <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
@@ -255,11 +255,11 @@ const Index = () => {
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-blue-100/50 p-8 md:p-12">
               <div className="max-w-4xl mx-auto py-12">
                 <div className="text-center mb-16">
-                  <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-4">Our Vision</h1>
-                  <p className="text-xl text-gray-600 font-light">A Trusted Partner for the Next Generation of Entrepreneurs</p>
+                  <h1 className="text-5xl md:text-6xl font-bold text-gray-800 dark:text-white mb-4">Our Vision</h1>
+                  <p className="text-xl text-gray-600 dark:text-gray-300 font-light">A Trusted Partner for the Next Generation of Entrepreneurs</p>
                 </div>
 
-                <div className="prose prose-lg max-w-none text-gray-700 space-y-8">
+                <div className="prose prose-lg max-w-none text-gray-700 dark:text-gray-300 space-y-8">
                   <div className="text-xl leading-relaxed font-light">
                     <p className="mb-6">Every business starts with a goal.</p>
                     <p className="mb-2">Sometimes it's to earn more for your family.</p>
@@ -271,7 +271,7 @@ const Index = () => {
                   </div>
 
                   <div>
-                    <h2 className="text-3xl font-bold text-gray-800 mb-6">Built on Trust, Designed to Help</h2>
+                    <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-6">Built on Trust, Designed to Help</h2>
                     <p className="text-xl mb-6 font-light">Fido is your business co-pilot.  A reliable, trustworthy companion and intelligent system that helps you get more while focusing on what matters.</p>
                     <p className="text-lg mb-4 font-light">From day one, it works alongside you to:</p>
                     <ul className="text-lg space-y-2 mb-6 pl-6 font-light">
@@ -284,7 +284,7 @@ const Index = () => {
                   </div>
 
                   <div>
-                    <h2 className="text-3xl font-bold text-gray-800 mb-6">Agentic Intelligence, Applied to Your Business</h2>
+                    <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-6">Agentic Intelligence, Applied to Your Business</h2>
                     <p className="text-xl mb-4 font-light">Fido is powered by a new class of AI, what we call agentic intelligence.</p>
                     <p className="text-lg mb-6 font-light">It is not just another chatbot or template tool. It is built to act on your behalf.</p>
                     <p className="text-lg mb-4 font-light">This means:</p>
@@ -297,7 +297,7 @@ const Index = () => {
                   </div>
 
                   <div>
-                    <h2 className="text-3xl font-bold text-gray-800 mb-6">For Business Owners Who Do It All</h2>
+                    <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-6">For Business Owners Who Do It All</h2>
                     <p className="text-lg mb-4 font-light">We didn't build Fido for tech companies or corporate teams.</p>
                     <p className="text-lg mb-4 font-light">We built it for people doing everything themselves:</p>
                     <ul className="text-lg space-y-2 mb-6 pl-6 font-light">
@@ -310,7 +310,7 @@ const Index = () => {
                   </div>
 
                   <div>
-                    <h2 className="text-3xl font-bold text-gray-800 mb-6">What We Stand For</h2>
+                    <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-6">What We Stand For</h2>
                     <p className="text-xl mb-6 font-medium">Helping small business owners succeed, faster, easier, and more confidently, through intelligent, trustworthy technology.</p>
                     <p className="text-lg mb-2 font-light">We believe technology should work like a partner, not a puzzle.</p>
                     <p className="text-lg mb-2 font-light">That automation should feel human, not robotic.</p>
@@ -319,7 +319,7 @@ const Index = () => {
                   </div>
 
                   <div>
-                    <h2 className="text-3xl font-bold text-gray-800 mb-6">Moving Forward, Together</h2>
+                    <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-6">Moving Forward, Together</h2>
                     <p className="text-lg mb-6 font-light">We are building Fido for the long haul because we know your journey doesn't end at launch.</p>
                     <p className="text-lg mb-2 font-light">It evolves.</p>
                     <p className="text-lg mb-2 font-light">It hits friction.</p>
@@ -330,7 +330,7 @@ const Index = () => {
                   </div>
 
                   <div className="text-center py-12 bg-gradient-to-t from-blue-50/50 to-transparent rounded-2xl">
-                    <h3 className="text-2xl font-bold text-gray-800 mb-6">Try Fido Copilot For Free</h3>
+                    <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-6">Try Fido Copilot For Free</h3>
                     <Button size="lg" className="bg-gradient-to-r from-indigo-600 to-rose-600 hover:from-indigo-700 hover:to-rose-700 text-white px-10 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 inline-flex items-center gap-2" onClick={handleTryFido}>
                       Try Fido For Free
                       <ExternalLink className="w-4 h-4" />
@@ -345,14 +345,14 @@ const Index = () => {
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-blue-100/50 p-8 md:p-12">
               <div className="max-w-4xl mx-auto py-12">
                 <div className="text-center mb-16">
-                  <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-4">Contact Us</h1>
-                  <p className="text-xl text-gray-600 font-light">Get in touch with our team</p>
+                  <h1 className="text-5xl md:text-6xl font-bold text-gray-800 dark:text-white mb-4">Contact Us</h1>
+                  <p className="text-xl text-gray-600 dark:text-gray-300 font-light">Get in touch with our team</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                   {/* Contact Information */}
                   <div className="space-y-8">
-                    <h2 className="text-3xl font-bold text-gray-800 mb-6">Get In Touch</h2>
+                    <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-6">Get In Touch</h2>
                     
                     <div className="space-y-6">
                       <div className="flex items-center space-x-4 group hover:bg-blue-50/50 rounded-lg p-3 transition-colors duration-200">
@@ -360,8 +360,8 @@ const Index = () => {
                           <Mail className="w-6 h-6 text-blue-600" />
                         </div>
                         <div>
-                          <h3 className="text-lg font-semibold text-gray-800">Email</h3>
-                          <p className="text-gray-600">founders@fidofinancial.ai</p>
+                          <h3 className="text-lg font-semibold text-gray-800 dark:text-white">Email</h3>
+                          <p className="text-gray-600 dark:text-gray-300">founders@fidofinancial.ai</p>
                         </div>
                       </div>
 
@@ -370,8 +370,8 @@ const Index = () => {
                           <Linkedin className="w-6 h-6 text-emerald-600" />
                         </div>
                         <div>
-                          <h3 className="text-lg font-semibold text-gray-800">LinkedIn</h3>
-                          <p className="text-gray-600">Fido Financial</p>
+                          <h3 className="text-lg font-semibold text-gray-800 dark:text-white">LinkedIn</h3>
+                          <p className="text-gray-600 dark:text-gray-300">Fido Financial</p>
                         </div>
                       </div>
 
@@ -380,8 +380,8 @@ const Index = () => {
                           <MessageCircle className="w-6 h-6 text-purple-600" />
                         </div>
                         <div>
-                          <h3 className="text-lg font-semibold text-gray-800">Reddit</h3>
-                          <p className="text-gray-600">u/fidofinancial</p>
+                          <h3 className="text-lg font-semibold text-gray-800 dark:text-white">Reddit</h3>
+                          <p className="text-gray-600 dark:text-gray-300">u/fidofinancial</p>
                         </div>
                       </div>
                     </div>
@@ -389,20 +389,20 @@ const Index = () => {
 
                   {/* Contact Form */}
                   <div className="bg-white/60 backdrop-blur-sm rounded-xl p-8 border border-blue-100/50">
-                    <h2 className="text-2xl font-bold text-gray-800 mb-6">Send us a message</h2>
+                    <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-6">Send us a message</h2>
                     <form className="space-y-6">
                       <div>
-                        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                        <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Name</label>
                         <input type="text" id="name" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200" placeholder="Your name" />
                       </div>
 
                       <div>
-                        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                        <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email</label>
                         <input type="email" id="email" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200" placeholder="your@email.com" />
                       </div>
 
                       <div>
-                        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                        <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Message</label>
                         <textarea id="message" rows={4} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none transition-all duration-200" placeholder="Tell us how we can help you..." />
                       </div>
 
@@ -414,7 +414,7 @@ const Index = () => {
                 </div>
 
                 <div className="text-center py-12 bg-gradient-to-t from-blue-50/50 to-transparent rounded-2xl mt-12">
-                  <h3 className="text-2xl font-bold text-gray-800 mb-6">Ready to Get Started?</h3>
+                  <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-6">Ready to Get Started?</h3>
                   <Button size="lg" className="bg-gradient-to-r from-indigo-600 to-rose-600 hover:from-indigo-700 hover:to-rose-700 text-white px-10 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 inline-flex items-center gap-2" onClick={handleTryFido}>
                     Try Fido For Free
                     <ExternalLink className="w-4 h-4" />

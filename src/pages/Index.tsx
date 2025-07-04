@@ -5,18 +5,38 @@ import { Calendar, Laptop, LineChart, BadgeDollarSign, ExternalLink, Mail, Linke
 import fidoLogo from "@/assets/fido-logo.png";
 import { useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
+import { useAnalytics } from "@/hooks/useAnalytics";
 
 const Index = () => {
+  const { trackEvent } = useAnalytics();
   const [showWaitlist, setShowWaitlist] = useState(false);
   const [waitlist, setWaitlist] = useState({ name: "", email: "" });
   const [joined, setJoined] = useState(false);
 
   const handleTryFido = () => {
+    trackEvent({ 
+      event_type: 'button_click', 
+      event_data: { button: 'try_fido', url: 'https://chatgpt.com/g/g-6849ed2b9ea48191a53c4f016cf0b29c-sba-loan-guidance-agent' }
+    });
     window.open('https://chatgpt.com/g/g-6849ed2b9ea48191a53c4f016cf0b29c-sba-loan-guidance-agent', '_blank');
+  };
+
+  const handleWaitlistToggle = () => {
+    const newState = !showWaitlist;
+    setShowWaitlist(newState);
+    trackEvent({ 
+      event_type: 'waitlist_toggle', 
+      event_data: { action: newState ? 'open' : 'close' }
+    });
   };
 
   const handleWaitlistSubmit = async (e) => {
     e.preventDefault();
+    
+    trackEvent({ 
+      event_type: 'waitlist_form_submitted', 
+      event_data: { email: waitlist.email }
+    });
     
     try {
       const { error } = await supabase
@@ -27,9 +47,17 @@ const Index = () => {
       
       setJoined(true);
       setWaitlist({ name: "", email: "" });
+      
+      trackEvent({ 
+        event_type: 'waitlist_joined_success', 
+        event_data: { email: waitlist.email }
+      });
     } catch (error) {
       console.error('Error joining waitlist:', error);
-      // Handle error - could add error state here
+      trackEvent({ 
+        event_type: 'waitlist_joined_error', 
+        event_data: { error: error.message }
+      });
     }
   };
 
@@ -43,7 +71,7 @@ const Index = () => {
           </div>
           <div>
             <button
-              onClick={() => setShowWaitlist(!showWaitlist)}
+              onClick={handleWaitlistToggle}
               className="text-sm font-medium px-4 py-2 rounded-full bg-gradient-to-r from-rose-500 to-indigo-500 text-white shadow hover:opacity-90 transition"
             >
               {showWaitlist ? "Close" : "Join the Waitlist"}

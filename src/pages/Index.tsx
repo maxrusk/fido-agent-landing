@@ -7,7 +7,7 @@ const Index = () => {
   const handleTryFido = () => {
     window.open('https://chatgpt.com/g/g-6849ed2b9ea48191a53c4f016cf0b29c-sba-loan-guidance-agent', '_blank');
   };
-  return <div className="min-h-screen bg-gradient-to-br from-blue-50 via-sky-50 to-cyan-50">
+  return <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-rose-50 to-pink-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
         
         <Tabs defaultValue="home" className="w-full">
@@ -22,7 +22,7 @@ const Index = () => {
             <div className="relative">
               <div className="pt-12 pb-16">
                 <div className="text-center">
-                  <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-blue-100 to-sky-100 text-blue-800 text-sm font-medium mb-8 border border-blue-200">
+                  <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-indigo-100 to-rose-100 text-indigo-800 text-sm font-medium mb-8 border border-indigo-200">
                     <span className="mr-2">🤖</span>
                     Powered by Agentic Intelligence
                   </div>
@@ -30,7 +30,7 @@ const Index = () => {
                   <h1 className="text-5xl md:text-7xl font-bold text-gray-800 mb-6 leading-tight">
                     For Business Owners Who Do It All
                     <br />
-                    <span className="bg-gradient-to-r from-blue-600 to-sky-600 bg-clip-text text-transparent">Meet Your New Co-Pilot</span>
+                    <span className="bg-gradient-to-r from-indigo-600 to-rose-600 bg-clip-text text-transparent">Meet Your New Co-Pilot</span>
                   </h1>
                   
                   <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
@@ -38,7 +38,7 @@ const Index = () => {
                   </p>
                   
                   <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <Button size="lg" className="bg-gradient-to-r from-blue-500 to-sky-500 hover:from-blue-600 hover:to-sky-600 text-white px-10 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200" onClick={handleTryFido}>Try Fido's SBA Co-Pilot</Button>
+                    <Button size="lg" className="bg-gradient-to-r from-indigo-600 to-rose-600 hover:from-indigo-700 hover:to-rose-700 text-white px-10 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200" onClick={handleTryFido}>Try Fido's SBA Co-Pilot</Button>
                     <p className="text-gray-500 text-sm font-light">
                       No credit card. Just momentum.
                     </p>
@@ -60,24 +60,24 @@ const Index = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl font-bold text-blue-600">1</span>
+                  <div className="w-16 h-16 bg-gradient-to-br from-indigo-100 to-rose-200 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-2xl font-bold text-indigo-700">1</span>
                   </div>
                   <h3 className="text-xl font-semibold text-gray-800 mb-3">Answer a few questions</h3>
                   <p className="text-gray-600 font-light">Tell Fido about your business goals and current situation</p>
                 </div>
 
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl font-bold text-emerald-600">2</span>
+                  <div className="w-16 h-16 bg-gradient-to-br from-indigo-100 to-rose-200 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-2xl font-bold text-indigo-700">2</span>
                   </div>
                   <h3 className="text-xl font-semibold text-gray-800 mb-3">Fido checks eligibility & builds your plan</h3>
                   <p className="text-gray-600 font-light">Get a personalized roadmap with loan options and requirements</p>
                 </div>
 
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-purple-100 to-purple-200 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl font-bold text-purple-600">3</span>
+                  <div className="w-16 h-16 bg-gradient-to-br from-indigo-100 to-rose-200 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-2xl font-bold text-indigo-700">3</span>
                   </div>
                   <h3 className="text-xl font-semibold text-gray-800 mb-3">Apply with confidence</h3>
                   <p className="text-gray-600 font-light">Fido supports you along the way with smart guidance</p>

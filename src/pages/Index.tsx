@@ -1,27 +1,97 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Calendar, Laptop, LineChart, BadgeDollarSign, ExternalLink, Mail, Linkedin, MessageCircle, CheckCircle, ArrowRight } from "lucide-react";
 import fidoLogo from "@/assets/fido-logo.png";
+import { useEffect, useState } from "react";
 
 const Index = () => {
+  const [isDark, setIsDark] = useState(false);
+  const [showWaitlist, setShowWaitlist] = useState(false);
+  const [waitlist, setWaitlist] = useState({ name: "", email: "" });
+  const [joined, setJoined] = useState(false);
+
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", isDark);
+  }, [isDark]);
+
   const handleTryFido = () => {
     window.open('https://chatgpt.com/g/g-6849ed2b9ea48191a53c4f016cf0b29c-sba-loan-guidance-agent', '_blank');
   };
 
+  const handleWaitlistSubmit = (e) => {
+    e.preventDefault();
+    // simulate API call
+    setJoined(true);
+    setWaitlist({ name: "", email: "" });
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-rose-50 to-pink-50">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-rose-50 to-pink-50 dark:from-gray-900 dark:via-gray-950 dark:to-black text-gray-900 dark:text-gray-100 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
-        {/* Logo */}
-        <div className="mb-8">
-          <img src={fidoLogo} alt="Fido Logo" className="h-12 w-auto" />
+        <div className="flex justify-between items-center mb-8">
+          {/* Logo */}
+          <div>
+            <img src={fidoLogo} alt="Fido Logo" className="h-12 w-auto" />
+          </div>
+          <div className="flex gap-4">
+            <button
+              onClick={() => setIsDark(!isDark)}
+              className="text-sm font-medium px-4 py-2 rounded-full bg-gradient-to-r from-indigo-600 to-rose-600 text-white dark:from-gray-700 dark:to-gray-800 shadow hover:opacity-90 transition"
+            >
+              {isDark ? "Switch to Light" : "Switch to Dark"} Mode
+            </button>
+            <button
+              onClick={() => setShowWaitlist(!showWaitlist)}
+              className="text-sm font-medium px-4 py-2 rounded-full bg-gradient-to-r from-rose-500 to-indigo-500 text-white shadow hover:opacity-90 transition"
+            >
+              {showWaitlist ? "Close" : "Join the Waitlist"}
+            </button>
+          </div>
         </div>
+
+        {showWaitlist && (
+          <div className="max-w-xl mx-auto bg-white dark:bg-gray-800 rounded-xl shadow p-6 mb-8">
+            <h2 className="text-2xl font-bold mb-4 text-gray-800 dark:text-white">Join the Waitlist</h2>
+            {joined ? (
+              <p className="text-green-600 dark:text-green-400">Thanks for joining! We'll be in touch soon.</p>
+            ) : (
+              <form onSubmit={handleWaitlistSubmit} className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Name</label>
+                  <input
+                    type="text"
+                    value={waitlist.name}
+                    onChange={(e) => setWaitlist({ ...waitlist, name: e.target.value })}
+                    required
+                    className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email</label>
+                  <input
+                    type="email"
+                    value={waitlist.email}
+                    onChange={(e) => setWaitlist({ ...waitlist, email: e.target.value })}
+                    required
+                    className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
+                  />
+                </div>
+                <Button type="submit" className="w-full bg-gradient-to-r from-indigo-600 to-rose-600 hover:from-indigo-700 hover:to-rose-700 text-white">
+                  Join Now
+                </Button>
+              </form>
+            )}
+          </div>
+        )}
         
         <Tabs defaultValue="home" className="w-full">
           <TabsList className="grid w-full grid-cols-3 max-w-lg mx-auto mb-8 bg-transparent border-none p-0 gap-4">
-            <TabsTrigger value="home" className="data-[state=active]:bg-white data-[state=active]:text-black data-[state=active]:border-2 data-[state=active]:border-black text-gray-500 bg-transparent border-2 border-transparent text-base font-bold rounded-xl px-8 py-3 hover:bg-gray-50">Home</TabsTrigger>
-            <TabsTrigger value="vision" className="data-[state=active]:bg-white data-[state=active]:text-black data-[state=active]:border-2 data-[state=active]:border-black text-gray-500 bg-transparent border-2 border-transparent font-bold rounded-xl px-8 py-3 hover:bg-gray-50">Our Vision</TabsTrigger>
-            <TabsTrigger value="contact" className="data-[state=active]:bg-white data-[state=active]:text-black data-[state=active]:border-2 data-[state=active]:border-black text-gray-500 bg-transparent border-2 border-transparent font-bold rounded-xl px-8 py-3 hover:bg-gray-50">Contact</TabsTrigger>
+            <TabsTrigger value="home" className="data-[state=active]:bg-white dark:data-[state=active]:bg-gray-800 data-[state=active]:text-black dark:data-[state=active]:text-white data-[state=active]:border-2 data-[state=active]:border-black dark:data-[state=active]:border-white text-gray-500 dark:text-gray-300 bg-transparent border-2 border-transparent text-base font-bold rounded-xl px-8 py-3 hover:bg-gray-50 dark:hover:bg-gray-800">Home</TabsTrigger>
+            <TabsTrigger value="vision" className="data-[state=active]:bg-white dark:data-[state=active]:bg-gray-800 data-[state=active]:text-black dark:data-[state=active]:text-white data-[state=active]:border-2 data-[state=active]:border-black dark:data-[state=active]:border-white text-gray-500 dark:text-gray-300 bg-transparent border-2 border-transparent font-bold rounded-xl px-8 py-3 hover:bg-gray-50 dark:hover:bg-gray-800">Our Vision</TabsTrigger>
+            <TabsTrigger value="contact" className="data-[state=active]:bg-white dark:data-[state=active]:bg-gray-800 data-[state=active]:text-black dark:data-[state=active]:text-white data-[state=active]:border-2 data-[state=active]:border-black dark:data-[state=active]:border-white text-gray-500 dark:text-gray-300 bg-transparent border-2 border-transparent font-bold rounded-xl px-8 py-3 hover:bg-gray-50 dark:hover:bg-gray-800">Contact</TabsTrigger>
           </TabsList>
           
           <TabsContent value="home">

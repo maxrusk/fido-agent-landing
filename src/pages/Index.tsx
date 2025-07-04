@@ -1,25 +1,45 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Calendar, Laptop, LineChart, BadgeDollarSign, ExternalLink, Mail, Linkedin, MessageCircle, CheckCircle, ArrowRight } from "lucide-react";
 import fidoLogo from "@/assets/fido-logo.png";
+import { useEffect, useState } from "react";
 
 const Index = () => {
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", isDark);
+  }, [isDark]);
+
   const handleTryFido = () => {
     window.open('https://chatgpt.com/g/g-6849ed2b9ea48191a53c4f016cf0b29c-sba-loan-guidance-agent', '_blank');
   };
-  return <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-rose-50 to-pink-50">
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-rose-50 to-pink-50 dark:from-gray-900 dark:via-gray-950 dark:to-black text-gray-900 dark:text-gray-100 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
-        {/* Logo */}
-        <div className="mb-8">
-          <img src={fidoLogo} alt="Fido Logo" className="h-12 w-auto" />
+        <div className="flex justify-between items-center mb-8">
+          {/* Logo */}
+          <div>
+            <img src={fidoLogo} alt="Fido Logo" className="h-12 w-auto" />
+          </div>
+          {/* Dark Mode Toggle */}
+          <button
+            onClick={() => setIsDark(!isDark)}
+            className="text-sm font-medium px-4 py-2 rounded-full bg-gradient-to-r from-indigo-600 to-rose-600 text-white dark:from-gray-700 dark:to-gray-800 shadow hover:opacity-90 transition"
+          >
+            {isDark ? "Switch to Light" : "Switch to Dark"} Mode
+          </button>
         </div>
         
         <Tabs defaultValue="home" className="w-full">
           <TabsList className="grid w-full grid-cols-3 max-w-lg mx-auto mb-8 bg-transparent border-none p-0 gap-4">
-            <TabsTrigger value="home" className="data-[state=active]:bg-white data-[state=active]:text-black data-[state=active]:border-2 data-[state=active]:border-black text-gray-500 bg-transparent border-2 border-transparent text-base font-bold rounded-xl px-8 py-3 hover:bg-gray-50">Home</TabsTrigger>
-            <TabsTrigger value="vision" className="data-[state=active]:bg-white data-[state=active]:text-black data-[state=active]:border-2 data-[state=active]:border-black text-gray-500 bg-transparent border-2 border-transparent font-bold rounded-xl px-8 py-3 hover:bg-gray-50">Our Vision</TabsTrigger>
-            <TabsTrigger value="contact" className="data-[state=active]:bg-white data-[state=active]:text-black data-[state=active]:border-2 data-[state=active]:border-black text-gray-500 bg-transparent border-2 border-transparent font-bold rounded-xl px-8 py-3 hover:bg-gray-50">Contact</TabsTrigger>
+            <TabsTrigger value="home" className="data-[state=active]:bg-white dark:data-[state=active]:bg-gray-800 data-[state=active]:text-black dark:data-[state=active]:text-white data-[state=active]:border-2 data-[state=active]:border-black dark:data-[state=active]:border-white text-gray-500 dark:text-gray-300 bg-transparent border-2 border-transparent text-base font-bold rounded-xl px-8 py-3 hover:bg-gray-50 dark:hover:bg-gray-800">Home</TabsTrigger>
+            <TabsTrigger value="vision" className="data-[state=active]:bg-white dark:data-[state=active]:bg-gray-800 data-[state=active]:text-black dark:data-[state=active]:text-white data-[state=active]:border-2 data-[state=active]:border-black dark:data-[state=active]:border-white text-gray-500 dark:text-gray-300 bg-transparent border-2 border-transparent font-bold rounded-xl px-8 py-3 hover:bg-gray-50 dark:hover:bg-gray-800">Our Vision</TabsTrigger>
+            <TabsTrigger value="contact" className="data-[state=active]:bg-white dark:data-[state=active]:bg-gray-800 data-[state=active]:text-black dark:data-[state=active]:text-white data-[state=active]:border-2 data-[state=active]:border-black dark:data-[state=active]:border-white text-gray-500 dark:text-gray-300 bg-transparent border-2 border-transparent font-bold rounded-xl px-8 py-3 hover:bg-gray-50 dark:hover:bg-gray-800">Contact</TabsTrigger>
           </TabsList>
           
           <TabsContent value="home">
@@ -353,6 +373,7 @@ const Index = () => {
           </TabsContent>
         </Tabs>
       </div>
-    </div>;
+    </div>
+  );
 };
 export default Index;

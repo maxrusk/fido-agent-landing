@@ -71,7 +71,30 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-rose-50 to-pink-50">
+    <>
+      {/* SEO Schema Markup */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Fido - AI Co-Pilot for Business Funding",
+          "description": "Get SBA loans, build business credit, and grow your company with Fido's AI-powered guidance.",
+          "url": "https://fidofinancial.ai",
+          "mainEntity": {
+            "@type": "SoftwareApplication",
+            "name": "Fido AI Co-Pilot",
+            "applicationCategory": "Business Finance Software",
+            "operatingSystem": "Web Browser",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            }
+          }
+        })}
+      </script>
+      
+      <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-rose-50 to-pink-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
         <div className="flex justify-between items-center mb-8">
           {/* Logo */}
@@ -470,6 +493,7 @@ const Index = () => {
         </Tabs>
       </div>
     </div>
+    </>
   );
 };
 export default Index;

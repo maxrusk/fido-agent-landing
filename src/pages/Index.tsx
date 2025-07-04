@@ -110,13 +110,13 @@ const Index = () => {
                     <span className="bg-gradient-to-r from-indigo-600 to-rose-600 bg-clip-text text-transparent">Meet Your New Co-Pilot</span>
                   </h1>
                   
-                  <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
+                  <p className="text-xl md:text-2xl text-gray-600 dark:text-black mb-12 max-w-3xl mx-auto leading-relaxed font-light">
                     Get funding. Build credit. Plan smarter. And grow with AI that works alongside you.
                   </p>
                   
                   <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                     <Button size="lg" className="bg-gradient-to-r from-indigo-600 to-rose-600 hover:from-indigo-700 hover:to-rose-700 text-white px-10 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200" onClick={handleTryFido}>Try Fido's SBA Co-Pilot</Button>
-                    <p className="text-gray-500 text-sm font-light">
+                    <p className="text-gray-500 dark:text-black text-sm font-light">
                       No credit card. Just momentum.
                     </p>
                   </div>
@@ -130,7 +130,7 @@ const Index = () => {
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">
                   How Fido Helps, Step by Step
                 </h2>
-                <p className="text-lg text-gray-600 max-w-2xl mx-auto font-light">
+                <p className="text-lg text-gray-600 dark:text-black max-w-2xl mx-auto font-light">
                   Your journey from idea to funding, simplified
                 </p>
               </div>
@@ -141,7 +141,7 @@ const Index = () => {
                     <span className="text-2xl font-bold text-indigo-700">1</span>
                   </div>
                   <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-3">Answer a few questions</h3>
-                  <p className="text-gray-600 font-light">Tell Fido about your business goals and current situation</p>
+                  <p className="text-gray-600 dark:text-black font-light">Tell Fido about your business goals and current situation</p>
                 </div>
 
                 <div className="text-center">
@@ -149,7 +149,7 @@ const Index = () => {
                     <span className="text-2xl font-bold text-indigo-700">2</span>
                   </div>
                   <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-3">Fido checks eligibility & builds your plan</h3>
-                  <p className="text-gray-600 font-light">Get a personalized roadmap with loan options and requirements</p>
+                  <p className="text-gray-600 dark:text-black font-light">Get a personalized roadmap with loan options and requirements</p>
                 </div>
 
                 <div className="text-center">
@@ -157,7 +157,7 @@ const Index = () => {
                     <span className="text-2xl font-bold text-indigo-700">3</span>
                   </div>
                   <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-3">Apply with confidence</h3>
-                  <p className="text-gray-600 font-light">Fido supports you along the way with smart guidance</p>
+                  <p className="text-gray-600 dark:text-black font-light">Fido supports you along the way with smart guidance</p>
                 </div>
               </div>
             </div>
@@ -168,7 +168,7 @@ const Index = () => {
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-6">
                   You Don't Have to Build Alone
                 </h2>
-                <p className="text-xl text-gray-600 max-w-2xl mx-auto font-light leading-relaxed">
+                <p className="text-xl text-gray-600 dark:text-black max-w-2xl mx-auto font-light leading-relaxed">
                   Fido combines AI intelligence with financial expertise to accelerate your business success
                 </p>
               </div>
@@ -182,7 +182,7 @@ const Index = () => {
                     <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">
                       Get Funded Without the Frustration
                     </h3>
-                    <p className="text-gray-600 text-lg leading-relaxed font-light">
+                    <p className="text-gray-600 dark:text-black text-lg leading-relaxed font-light">
                       Fido automates SBA loan paperwork, checks eligibility, and boosts your chances—stop guessing and start growing.
                     </p>
                   </CardContent>
@@ -196,7 +196,7 @@ const Index = () => {
                     <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">
                       Build Credit That Opens Doors
                     </h3>
-                    <p className="text-gray-600 text-lg leading-relaxed font-light">
+                    <p className="text-gray-600 dark:text-black text-lg leading-relaxed font-light">
                       Track and optimize your business credit with step-by-step guidance to qualify for your needs.
                     </p>
                   </CardContent>
@@ -210,7 +210,7 @@ const Index = () => {
                     <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">
                       Turn Your Goals Into a Fundable Plan
                     </h3>
-                    <p className="text-gray-600 text-lg leading-relaxed font-light">
+                    <p className="text-gray-600 dark:text-black text-lg leading-relaxed font-light">
                       Fido turns your vision into a lender-ready business plan designed for results.
                     </p>
                   </CardContent>
@@ -224,7 +224,7 @@ const Index = () => {
                     <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">
                       Not Just AI. Agentic Intelligence.
                     </h3>
-                    <p className="text-gray-600 text-lg leading-relaxed font-light">
+                    <p className="text-gray-600 dark:text-black text-lg leading-relaxed font-light">
                       Fido is more than a chatbot—it acts on your behalf, making smart decisions for you 24/7.
                     </p>
                   </CardContent>
@@ -238,13 +238,13 @@ const Index = () => {
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-6">
                   You Don't Have to Build Alone.
                 </h2>
-                <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
+                <p className="text-xl text-gray-600 dark:text-black mb-12 max-w-2xl mx-auto font-light leading-relaxed">
                   Start your business journey with a smarter, stronger co-pilot. No credit card. Just momentum.
                 </p>
                 <Button size="lg" className="bg-gradient-to-r from-indigo-600 to-rose-600 hover:from-indigo-700 hover:to-rose-700 text-white px-12 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200" onClick={handleTryFido}>
                   Get Started Free
                 </Button>
-                <p className="mt-6 text-sm text-gray-500 font-light">
+                <p className="mt-6 text-sm text-gray-500 dark:text-black font-light">
                   Your ambition + our agentic intelligence = unstoppable growth
                 </p>
               </div>

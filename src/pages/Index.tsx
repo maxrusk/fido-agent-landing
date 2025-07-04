@@ -4,6 +4,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Calendar, Laptop, LineChart, BadgeDollarSign, ExternalLink, Mail, Linkedin, MessageCircle, CheckCircle, ArrowRight } from "lucide-react";
 import fidoLogo from "@/assets/fido-logo.png";
 import { useState } from "react";
+import { supabase } from "@/integrations/supabase/client";
 
 const Index = () => {
   const [showWaitlist, setShowWaitlist] = useState(false);
@@ -14,11 +15,22 @@ const Index = () => {
     window.open('https://chatgpt.com/g/g-6849ed2b9ea48191a53c4f016cf0b29c-sba-loan-guidance-agent', '_blank');
   };
 
-  const handleWaitlistSubmit = (e) => {
+  const handleWaitlistSubmit = async (e) => {
     e.preventDefault();
-    // simulate API call
-    setJoined(true);
-    setWaitlist({ name: "", email: "" });
+    
+    try {
+      const { error } = await supabase
+        .from('waitlist')
+        .insert([{ name: waitlist.name, email: waitlist.email }]);
+      
+      if (error) throw error;
+      
+      setJoined(true);
+      setWaitlist({ name: "", email: "" });
+    } catch (error) {
+      console.error('Error joining waitlist:', error);
+      // Handle error - could add error state here
+    }
   };
 
   return (

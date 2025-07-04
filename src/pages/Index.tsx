@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Calendar, Laptop, LineChart, BadgeDollarSign, ExternalLink, Mail, Linkedin, MessageCircle, CheckCircle, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import fidoLogo from "@/assets/fido-logo.png";
 import { useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
@@ -28,6 +29,13 @@ const Index = () => {
     trackEvent({ 
       event_type: 'waitlist_toggle', 
       event_data: { action: newState ? 'open' : 'close' }
+    });
+  };
+
+  const handleLogoClick = () => {
+    trackEvent({ 
+      event_type: 'logo_click', 
+      event_data: { destination: 'home' }
     });
   };
 
@@ -67,9 +75,9 @@ const Index = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
         <div className="flex justify-between items-center mb-8">
           {/* Logo */}
-          <div>
+          <Link to="/" onClick={handleLogoClick} className="hover:opacity-80 transition-opacity duration-200">
             <img src={fidoLogo} alt="Fido Logo" className="h-12 w-auto" />
-          </div>
+          </Link>
           <div>
             <button
               onClick={handleWaitlistToggle}

@@ -75,8 +75,9 @@ const Index = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
         <div className="flex justify-between items-center mb-8">
           {/* Logo */}
-          <Link to="/" onClick={handleLogoClick} className="hover:opacity-80 transition-opacity duration-200">
-            <img src={fidoLogo} alt="Fido Logo" className="h-12 w-auto" />
+          <Link to="/" onClick={handleLogoClick} className="group relative hover:scale-105 transition-all duration-300 ease-out">
+            <div className="absolute -inset-1 bg-gradient-to-r from-indigo-600/20 to-rose-600/20 rounded-lg blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <img src={fidoLogo} alt="Fido Logo" className="relative h-12 w-auto drop-shadow-sm group-hover:drop-shadow-md transition-all duration-300" />
           </Link>
           <div>
             <button

@@ -110,7 +110,20 @@ serve(async (req) => {
       });
     }
 
-    console.log('OpenAI API key found, parsing request body');
+    // Validate the API key format
+    const cleanApiKey = openAIApiKey.trim();
+    if (!cleanApiKey.startsWith('sk-')) {
+      console.error('Invalid OpenAI API key format');
+      return new Response(JSON.stringify({ 
+        error: 'Invalid API key format',
+        success: false 
+      }), {
+        status: 500,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
+
+    console.log('OpenAI API key validated, parsing request body');
     
     const requestBody = await req.json();
     const { message, conversationHistory = [] } = requestBody;
@@ -140,18 +153,26 @@ serve(async (req) => {
 
     console.log('Sending request to OpenAI with', messages.length, 'messages');
 
+    // Create the request body first
+    const requestBodyJson = JSON.stringify({
+      model: 'gpt-4o',
+      messages: messages,
+      temperature: 0.7,
+      max_tokens: 2000,
+    });
+
+    // Use basic object for headers instead of Headers constructor
+    const requestHeaders = {
+      'Authorization': `Bearer ${cleanApiKey}`,
+      'Content-Type': 'application/json',
+    };
+
+    console.log('Making OpenAI API request...');
+
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${openAIApiKey}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        model: 'gpt-4o',
-        messages: messages,
-        temperature: 0.7,
-        max_tokens: 2000,
-      }),
+      headers: requestHeaders,
+      body: requestBodyJson,
     });
 
     console.log('OpenAI response status:', response.status);

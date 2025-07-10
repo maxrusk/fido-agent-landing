@@ -86,16 +86,21 @@ Then tailor tone, examples, and advice accordingly.
 Every 2-3 messages, briefly reinforce the long-term goal to keep users motivated.`;
 
 serve(async (req) => {
+  console.log('SBA Chat function invoked');
+  
   // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
+    console.log('Handling CORS preflight request');
     return new Response(null, { headers: corsHeaders });
   }
 
   try {
+    console.log('Processing chat request');
+    
     const openAIApiKey = Deno.env.get('OPENAI_API_KEY');
     
     if (!openAIApiKey) {
-      console.error('OpenAI API key not found');
+      console.error('OpenAI API key not found in environment variables');
       return new Response(JSON.stringify({ 
         error: 'OpenAI API key not configured',
         success: false 
@@ -105,9 +110,26 @@ serve(async (req) => {
       });
     }
 
-    const { message, conversationHistory = [] } = await req.json();
+    console.log('OpenAI API key found, parsing request body');
+    
+    const requestBody = await req.json();
+    const { message, conversationHistory = [] } = requestBody;
 
-    console.log('SBA Chat request received:', { message, historyLength: conversationHistory.length });
+    console.log('Request parsed:', { 
+      messageLength: message?.length, 
+      historyLength: conversationHistory.length 
+    });
+
+    if (!message) {
+      console.error('No message provided in request');
+      return new Response(JSON.stringify({ 
+        error: 'Message is required',
+        success: false 
+      }), {
+        status: 400,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
 
     // Build messages array with system prompt and conversation history
     const messages = [
@@ -116,14 +138,14 @@ serve(async (req) => {
       { role: 'user', content: message }
     ];
 
-    // Create headers object with proper validation
-    const headers = new Headers();
-    headers.set('Authorization', `Bearer ${openAIApiKey}`);
-    headers.set('Content-Type', 'application/json');
+    console.log('Sending request to OpenAI with', messages.length, 'messages');
 
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
-      headers: headers,
+      headers: {
+        'Authorization': `Bearer ${openAIApiKey}`,
+        'Content-Type': 'application/json',
+      },
       body: JSON.stringify({
         model: 'gpt-4o',
         messages: messages,
@@ -132,22 +154,36 @@ serve(async (req) => {
       }),
     });
 
+    console.log('OpenAI response status:', response.status);
+
     if (!response.ok) {
       const errorText = await response.text();
       console.error('OpenAI API error:', response.status, response.statusText, errorText);
-      throw new Error(`OpenAI API error: ${response.status} - ${errorText}`);
+      return new Response(JSON.stringify({ 
+        error: `OpenAI API error: ${response.status}`,
+        success: false 
+      }), {
+        status: 500,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
     }
 
     const data = await response.json();
+    console.log('OpenAI response received successfully');
     
     if (!data.choices || !data.choices[0] || !data.choices[0].message) {
-      console.error('Invalid OpenAI response format:', data);
-      throw new Error('Invalid response format from OpenAI');
+      console.error('Invalid OpenAI response format:', JSON.stringify(data));
+      return new Response(JSON.stringify({ 
+        error: 'Invalid response format from OpenAI',
+        success: false 
+      }), {
+        status: 500,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
     }
 
     const aiResponse = data.choices[0].message.content;
-
-    console.log('SBA Chat response generated successfully');
+    console.log('AI response generated, length:', aiResponse?.length);
 
     return new Response(JSON.stringify({ 
       message: aiResponse,
@@ -157,9 +193,14 @@ serve(async (req) => {
     });
 
   } catch (error) {
-    console.error('Error in SBA chat function:', error);
+    console.error('Detailed error in SBA chat function:', {
+      message: error.message,
+      stack: error.stack,
+      name: error.name
+    });
+    
     return new Response(JSON.stringify({ 
-      error: error.message || 'An unexpected error occurred',
+      error: `Server error: ${error.message}`,
       success: false 
     }), {
       status: 500,

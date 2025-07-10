@@ -8,6 +8,7 @@ import { useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useAnalytics } from "@/hooks/useAnalytics";
 import { SocialShare } from "@/components/SocialShare";
+import { SBAChat } from "@/components/SBAChat";
 
 const Index = () => {
   const { trackEvent } = useAnalytics();
@@ -175,7 +176,7 @@ const Index = () => {
                   </p>
                   
                   <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <Button size="lg" className="bg-gradient-to-r from-indigo-600 to-rose-600 hover:from-indigo-700 hover:to-rose-700 text-white px-10 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200" onClick={handleTryFido}>Try Fido's SBA Co-Pilot</Button>
+                    <SBAChat />
                     <p className="text-gray-500 text-sm font-light">
                       No credit card. Just momentum.
                     </p>
@@ -301,9 +302,11 @@ const Index = () => {
                 <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
                   Start your business journey with a smarter, stronger co-pilot. No credit card. Just momentum.
                 </p>
-                <Button size="lg" className="bg-gradient-to-r from-indigo-600 to-rose-600 hover:from-indigo-700 hover:to-rose-700 text-white px-12 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200" onClick={handleTryFido}>
-                  Get Started Free
-                </Button>
+                <SBAChat trigger={
+                  <Button size="lg" className="bg-gradient-to-r from-indigo-600 to-rose-600 hover:from-indigo-700 hover:to-rose-700 text-white px-12 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200">
+                    Get Started Free
+                  </Button>
+                } />
                 <p className="mt-6 text-sm text-gray-500 font-light">
                   Your ambition + our agentic intelligence = unstoppable growth
                 </p>
@@ -398,10 +401,12 @@ const Index = () => {
 
                   <div className="text-center py-12 bg-gradient-to-t from-blue-50/50 to-transparent rounded-2xl">
                     <h3 className="text-2xl font-bold text-gray-800 mb-6">Try Fido Copilot For Free</h3>
-                    <Button size="lg" className="bg-gradient-to-r from-indigo-600 to-rose-600 hover:from-indigo-700 hover:to-rose-700 text-white px-10 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 inline-flex items-center gap-2" onClick={handleTryFido}>
-                      Try Fido For Free
-                      <ExternalLink className="w-4 h-4" />
-                    </Button>
+                    <SBAChat trigger={
+                      <Button size="lg" className="bg-gradient-to-r from-indigo-600 to-rose-600 hover:from-indigo-700 hover:to-rose-700 text-white px-10 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 inline-flex items-center gap-2">
+                        Try Fido For Free
+                        <MessageCircle className="w-4 h-4" />
+                      </Button>
+                    } />
                   </div>
                 </div>
               </div>
@@ -482,16 +487,30 @@ const Index = () => {
 
                 <div className="text-center py-12 bg-gradient-to-t from-blue-50/50 to-transparent rounded-2xl mt-12">
                   <h3 className="text-2xl font-bold text-gray-800 mb-6">Ready to Get Started?</h3>
-                  <Button size="lg" className="bg-gradient-to-r from-indigo-600 to-rose-600 hover:from-indigo-700 hover:to-rose-700 text-white px-10 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 inline-flex items-center gap-2" onClick={handleTryFido}>
-                    Try Fido For Free
-                    <ExternalLink className="w-4 h-4" />
-                  </Button>
+                  <SBAChat trigger={
+                    <Button size="lg" className="bg-gradient-to-r from-indigo-600 to-rose-600 hover:from-indigo-700 hover:to-rose-700 text-white px-10 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 inline-flex items-center gap-2">
+                      Try Fido For Free
+                      <MessageCircle className="w-4 h-4" />
+                    </Button>
+                  } />
                 </div>
               </div>
             </div>
           </TabsContent>
         </Tabs>
       </div>
+    </div>
+
+    {/* Floating Chat Button */}
+    <div className="fixed bottom-8 right-8 z-50">
+      <SBAChat trigger={
+        <Button 
+          size="lg" 
+          className="w-16 h-16 rounded-full bg-gradient-to-r from-primary to-primary-glow hover:from-primary-glow hover:to-primary shadow-elegant hover:shadow-glow transition-all duration-300 hover:scale-110"
+        >
+          <MessageCircle className="h-6 w-6" />
+        </Button>
+      } />
     </div>
     </>
   );

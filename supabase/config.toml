@@ -1,1 +1,4 @@
 project_id = "vdxibjlkaguoeghczyzy"
+
+[functions.sba-chat]
+verify_jwt = false

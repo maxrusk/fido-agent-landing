@@ -144,7 +144,7 @@ What's your name?`,
   const defaultTrigger = (
     <Button 
       size="lg" 
-      className="bg-gradient-to-r from-primary to-primary-glow hover:from-primary-glow hover:to-primary shadow-elegant hover:shadow-glow transition-all duration-300"
+      className="bg-gradient-to-r from-primary to-primary-glow hover:from-primary-glow hover:to-primary shadow-elegant hover:shadow-glow transition-all duration-300 hover:scale-105"
     >
       <MessageCircle className="mr-2 h-5 w-5" />
       Get SBA Loan Guidance
@@ -156,7 +156,7 @@ What's your name?`,
       <DialogTrigger asChild>
         {trigger || defaultTrigger}
       </DialogTrigger>
-      <DialogContent className="sm:max-w-4xl h-[80vh] flex flex-col p-0">
+      <DialogContent className="sm:max-w-4xl h-[80vh] flex flex-col p-0 animate-scale-in">
         <DialogHeader className="px-6 py-4 border-b">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
@@ -238,9 +238,13 @@ What's your name?`,
                 onKeyPress={handleKeyPress}
                 placeholder="Type your message..."
                 disabled={isLoading}
-                className="flex-1"
+                className="flex-1 focus:ring-2 focus:ring-primary/20"
               />
-              <Button type="submit" disabled={isLoading || !input.trim()}>
+              <Button 
+                type="submit" 
+                disabled={isLoading || !input.trim()}
+                className="hover:scale-105 transition-transform"
+              >
                 <Send className="h-4 w-4" />
               </Button>
             </form>

@@ -86,146 +86,139 @@ Then tailor tone, examples, and advice accordingly.
 Every 2-3 messages, briefly reinforce the long-term goal to keep users motivated.`;
 
 serve(async (req) => {
-  console.log('SBA Chat function invoked');
+  console.log('=== SBA Chat Function Started ===');
   
   // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
-    console.log('Handling CORS preflight request');
+    console.log('Handling CORS preflight');
     return new Response(null, { headers: corsHeaders });
   }
 
   try {
-    console.log('Processing chat request');
+    console.log('Processing request...');
     
+    // Get OpenAI API key
     const openAIApiKey = Deno.env.get('OPENAI_API_KEY');
-    
     if (!openAIApiKey) {
-      console.error('OpenAI API key not found in environment variables');
-      return new Response(JSON.stringify({ 
-        error: 'OpenAI API key not configured',
-        success: false 
-      }), {
-        status: 500,
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-      });
+      console.error('OpenAI API key not found');
+      return new Response(
+        JSON.stringify({ 
+          error: 'OpenAI API key not configured',
+          success: false 
+        }),
+        {
+          status: 500,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        }
+      );
     }
 
-    // Validate the API key format
-    const cleanApiKey = openAIApiKey.trim();
-    if (!cleanApiKey.startsWith('sk-')) {
-      console.error('Invalid OpenAI API key format');
-      return new Response(JSON.stringify({ 
-        error: 'Invalid API key format',
-        success: false 
-      }), {
-        status: 500,
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-      });
-    }
-
-    console.log('OpenAI API key validated, parsing request body');
-    
+    // Parse request body
     const requestBody = await req.json();
     const { message, conversationHistory = [] } = requestBody;
-
+    
     console.log('Request parsed:', { 
-      messageLength: message?.length, 
+      messageLength: message?.length,
       historyLength: conversationHistory.length 
     });
 
-    if (!message) {
-      console.error('No message provided in request');
-      return new Response(JSON.stringify({ 
-        error: 'Message is required',
-        success: false 
-      }), {
-        status: 400,
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-      });
+    if (!message || typeof message !== 'string') {
+      console.error('Invalid message:', message);
+      return new Response(
+        JSON.stringify({ 
+          error: 'Valid message is required',
+          success: false 
+        }),
+        {
+          status: 400,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        }
+      );
     }
 
-    // Build messages array with system prompt and conversation history
+    // Build messages array
     const messages = [
       { role: 'system', content: SBA_SYSTEM_PROMPT },
       ...conversationHistory,
       { role: 'user', content: message }
     ];
 
-    console.log('Sending request to OpenAI with', messages.length, 'messages');
+    console.log('Calling OpenAI API...');
 
-    // Create the request body first
-    const requestBodyJson = JSON.stringify({
-      model: 'gpt-4.1-2025-04-14',
-      messages: messages,
-      temperature: 0.7,
-      max_tokens: 2000,
-    });
-
-    // Use basic object for headers instead of Headers constructor
-    const requestHeaders = {
-      'Authorization': `Bearer ${cleanApiKey}`,
-      'Content-Type': 'application/json',
-    };
-
-    console.log('Making OpenAI API request...');
-
-    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+    // Call OpenAI API
+    const openAIResponse = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
-      headers: requestHeaders,
-      body: requestBodyJson,
+      headers: {
+        'Authorization': `Bearer ${openAIApiKey}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        model: 'gpt-4.1-2025-04-14',
+        messages: messages,
+        temperature: 0.7,
+        max_tokens: 1500,
+      }),
     });
 
-    console.log('OpenAI response status:', response.status);
+    console.log('OpenAI API response status:', openAIResponse.status);
 
-    if (!response.ok) {
-      const errorText = await response.text();
-      console.error('OpenAI API error:', response.status, response.statusText, errorText);
-      return new Response(JSON.stringify({ 
-        error: `OpenAI API error: ${response.status}`,
-        success: false 
-      }), {
-        status: 500,
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-      });
+    if (!openAIResponse.ok) {
+      const errorText = await openAIResponse.text();
+      console.error('OpenAI API error:', openAIResponse.status, errorText);
+      return new Response(
+        JSON.stringify({ 
+          error: `OpenAI API error: ${openAIResponse.status}`,
+          success: false 
+        }),
+        {
+          status: 500,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        }
+      );
     }
 
-    const data = await response.json();
-    console.log('OpenAI response received successfully');
-    
-    if (!data.choices || !data.choices[0] || !data.choices[0].message) {
-      console.error('Invalid OpenAI response format:', JSON.stringify(data));
-      return new Response(JSON.stringify({ 
-        error: 'Invalid response format from OpenAI',
-        success: false 
-      }), {
-        status: 500,
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-      });
+    const data = await openAIResponse.json();
+    console.log('OpenAI response received');
+
+    if (!data.choices?.[0]?.message?.content) {
+      console.error('Invalid OpenAI response format');
+      return new Response(
+        JSON.stringify({ 
+          error: 'Invalid response from OpenAI',
+          success: false 
+        }),
+        {
+          status: 500,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        }
+      );
     }
 
     const aiResponse = data.choices[0].message.content;
-    console.log('AI response generated, length:', aiResponse?.length);
+    console.log('Success! Response length:', aiResponse.length);
 
-    return new Response(JSON.stringify({ 
-      message: aiResponse,
-      success: true 
-    }), {
-      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-    });
+    return new Response(
+      JSON.stringify({ 
+        message: aiResponse,
+        success: true 
+      }),
+      {
+        status: 200,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      }
+    );
 
   } catch (error) {
-    console.error('Detailed error in SBA chat function:', {
-      message: error.message,
-      stack: error.stack,
-      name: error.name
-    });
-    
-    return new Response(JSON.stringify({ 
-      error: `Server error: ${error.message}`,
-      success: false 
-    }), {
-      status: 500,
-      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-    });
+    console.error('Function error:', error);
+    return new Response(
+      JSON.stringify({ 
+        error: error.message || 'Internal server error',
+        success: false 
+      }),
+      {
+        status: 500,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      }
+    );
   }
 });

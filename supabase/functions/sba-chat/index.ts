@@ -155,7 +155,7 @@ serve(async (req) => {
 
     // Create the request body first
     const requestBodyJson = JSON.stringify({
-      model: 'gpt-4o',
+      model: 'gpt-4.1-2025-04-14',
       messages: messages,
       temperature: 0.7,
       max_tokens: 2000,
